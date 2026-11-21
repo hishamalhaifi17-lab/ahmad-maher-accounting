@@ -1,862 +1,1302 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta name="theme-color" content="#0a1f3a" />
-  <title>مكتب أحمد ماهر للتخليص والتوكيلات التجارية</title>
-  <style>
-    :root {
-      --bg: #f1f4f8;
-      --surface: #ffffff;
-      --navy: #0a1f3a;
-      --navy-soft: #15365e;
-      --gold: #c8962e;
-      --gold-bg: #fdf6e7;
-      --ink: #0f1c2e;
-      --muted: #5c6c80;
-      --line: #dde5f0;
-      --green: #147a57;
-      --red: #b91c1c;
-      --r-lg: 20px;
-      --r-md: 15px;
-      --r-sm: 11px;
-      --shadow: 0 8px 24px rgba(10, 31, 58, 0.08);
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="theme-color" content="#0a1f3a" />
+<title>مكتب أحمد ماهر للتخليص والتوكيلات التجارية</title>
+<style>
+:root {
+  --bg: #f1f4f8;
+  --surface: #ffffff;
+  --surface-soft: #f8fafc;
+  --navy: #0a1f3a;
+  --navy-soft: #15365e;
+  --gold: #c8962e;
+  --gold-bg: #fdf6e7;
+  --ink: #0f1c2e;
+  --muted: #5c6c80;
+  --line: #dde5f0;
+  --green: #147a57;
+  --green-bg: #e6f6ef;
+  --red: #b91c1c;
+  --red-bg: #fdecec;
+  --r-lg: 20px;
+  --r-md: 15px;
+  --r-sm: 11px;
+  --shadow: 0 8px 24px rgba(10, 31, 58, 0.08);
+}
 
-    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 
-    body {
-      font-family: system-ui, -apple-system, "Segoe UI", Tahoma, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--ink);
-      line-height: 1.5;
-      padding-bottom: 86px;
-      overflow-x: hidden;
-    }
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Tahoma, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.5;
+  padding-bottom: 88px;
+  overflow-x: hidden;
+}
 
-    .brand-lockup { display: flex; align-items: center; gap: 12px; }
+.hidden { display: none !important; }
 
-    .logo-badge {
-      width: 68px;
-      height: 58px;
-      flex-shrink: 0;
-      border-radius: 14px;
-      background: #ffffff;
-      border: 1.5px solid var(--line);
-      box-shadow: 0 6px 16px rgba(10, 31, 58, 0.14);
-      display: grid;
-      place-items: center;
-      padding: 4px;
-      overflow: hidden;
-    }
+.brand-lockup { display: flex; align-items: center; gap: 12px; }
 
-    .logo-badge svg { width: 100%; height: 100%; display: block; }
+.logo-badge {
+  width: 68px;
+  height: 58px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  background: #ffffff;
+  border: 1.5px solid var(--line);
+  box-shadow: 0 6px 16px rgba(10, 31, 58, 0.14);
+  display: grid;
+  place-items: center;
+  padding: 4px;
+  overflow: hidden;
+}
 
-    .brand-h1 { font-size: 0.98rem; font-weight: 900; line-height: 1.3; }
+.logo-badge svg { width: 100%; height: 100%; display: block; }
 
-    .brand-pill {
-      display: inline-block;
-      margin-top: 4px;
-      font-size: 0.72rem;
-      font-weight: 800;
-      padding: 2px 9px;
-      border-radius: 999px;
-      background: var(--gold-bg);
-      color: #825b10;
-      border: 1px solid rgba(200, 150, 46, 0.35);
-    }
+.brand-h1 { font-size: 0.98rem; font-weight: 900; line-height: 1.3; }
 
-    #login-view {
-      min-height: 100dvh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 20px 16px;
-      background:
-        radial-gradient(circle at 85% 12%, rgba(200, 150, 46, 0.22), transparent 42%),
-        linear-gradient(180deg, var(--navy) 0%, var(--navy-soft) 46%, var(--bg) 46%);
-    }
+.brand-pill {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 2px 9px;
+  border-radius: 999px;
+  background: var(--gold-bg);
+  color: #825b10;
+  border: 1px solid rgba(200, 150, 46, 0.35);
+}
 
-    .login-card {
-      width: 100%;
-      max-width: 420px;
-      margin: 0 auto;
-      background: var(--surface);
-      border-radius: var(--r-lg);
-      border: 1px solid var(--line);
-      padding: 22px 18px;
-      box-shadow: 0 18px 40px rgba(10, 31, 58, 0.16);
-    }
+#login-view {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px 16px;
+  background:
+    radial-gradient(circle at 85% 12%, rgba(200, 150, 46, 0.22), transparent 42%),
+    linear-gradient(180deg, var(--navy) 0%, var(--navy-soft) 46%, var(--bg) 46%);
+}
 
-    .login-brand { padding-bottom: 14px; margin-bottom: 16px; border-bottom: 1px solid var(--line); }
-    .login-brand .brand-h1 { color: var(--navy); }
+.login-card {
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+  background: var(--surface);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--line);
+  padding: 22px 18px;
+  box-shadow: 0 18px 40px rgba(10, 31, 58, 0.16);
+}
 
-    .login-meta {
-      margin-top: 10px;
-      font-size: 0.78rem;
-      color: var(--muted);
-      background: var(--bg);
-      padding: 8px 12px;
-      border-radius: var(--r-sm);
-    }
+.login-brand { padding-bottom: 14px; margin-bottom: 16px; border-bottom: 1px solid var(--line); }
+.login-brand .brand-h1 { color: var(--navy); }
 
-    .form-group { margin-bottom: 12px; }
+.login-meta {
+  margin-top: 10px;
+  font-size: 0.78rem;
+  color: var(--muted);
+  background: var(--bg);
+  padding: 8px 12px;
+  border-radius: var(--r-sm);
+}
 
-    label {
-      display: block;
-      font-size: 0.8rem;
-      font-weight: 800;
-      color: var(--navy);
-      margin-bottom: 5px;
-    }
+.form-group { margin-bottom: 12px; }
 
-    input, select {
-      width: 100%;
-      min-height: 44px;
-      padding: 9px 12px;
-      border-radius: var(--r-sm);
-      border: 1.5px solid var(--line);
-      background: var(--surface);
-      color: var(--ink);
-      font-size: 0.92rem;
-      font-family: inherit;
-    }
+label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 5px;
+}
 
-    input:focus, select:focus { outline: none; border-color: var(--gold); }
+input, select {
+  width: 100%;
+  min-height: 44px;
+  padding: 9px 12px;
+  border-radius: var(--r-sm);
+  border: 1.5px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 0.92rem;
+  font-family: inherit;
+}
 
-    .btn {
-      width: 100%;
-      min-height: 44px;
-      padding: 10px 14px;
-      border: none;
-      border-radius: 12px;
-      font-size: 0.9rem;
-      font-weight: 800;
-      font-family: inherit;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-    }
+input:focus, select:focus { outline: none; border-color: var(--gold); }
 
-    .btn-primary { background: linear-gradient(135deg, var(--navy), var(--navy-soft)); color: #fff; }
-    .btn-save { background: linear-gradient(135deg, #116b4c, var(--green)); color: #fff; }
-    .btn-gold { background: linear-gradient(135deg, #a87919, var(--gold)); color: #fff; }
+.pass-row { display: flex; gap: 6px; align-items: center; }
+.pass-row input { flex: 1; }
 
-    .btn-del {
-      width: auto;
-      min-height: 32px;
-      padding: 4px 9px;
-      font-size: 0.74rem;
-      border-radius: 8px;
-      background: #fdecec;
-      color: var(--red);
-      border: 1px solid #f6caca;
-    }
+.btn {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  font-family: inherit;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
 
-    .btn-exit {
-      width: auto;
-      min-height: 36px;
-      padding: 6px 12px;
-      font-size: 0.8rem;
-      border-radius: 10px;
-      background: rgba(255, 255, 255, 0.12);
-      color: #fff;
-      border: 1px solid rgba(255, 255, 255, 0.28);
-    }
+.btn-primary { background: linear-gradient(135deg, var(--navy), var(--navy-soft)); color: #fff; }
+.btn-save { background: linear-gradient(135deg, #116b4c, var(--green)); color: #fff; }
+.btn-gold { background: linear-gradient(135deg, #a87919, var(--gold)); color: #fff; }
+.btn-muted { background: #e8eef5; color: var(--navy); border: 1px solid var(--line); }
 
-    .login-err {
-      color: var(--red);
-      font-size: 0.82rem;
-      font-weight: 700;
-      min-height: 18px;
-      margin-bottom: 8px;
-    }
+.btn-sm { width: auto; min-height: 36px; padding: 6px 12px; font-size: 0.78rem; border-radius: 9px; }
 
-    #app-view { display: none; }
+.btn-del {
+  width: auto;
+  min-height: 32px;
+  padding: 4px 9px;
+  font-size: 0.74rem;
+  border-radius: 8px;
+  background: var(--red-bg);
+  color: var(--red);
+  border: 1px solid #f6caca;
+}
 
-    .app-top {
-      background: linear-gradient(150deg, #08182e 0%, var(--navy) 55%, var(--navy-soft) 100%);
-      color: #fff;
-      padding: 15px 15px 18px;
-      border-bottom-left-radius: 22px;
-      border-bottom-right-radius: 22px;
-      border-bottom: 3px solid var(--gold);
-      box-shadow: var(--shadow);
-    }
+.btn-exit {
+  width: auto;
+  min-height: 36px;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+}
 
-    .app-top-bar {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 8px;
-      margin-bottom: 12px;
-    }
+.login-err {
+  color: var(--red);
+  font-size: 0.82rem;
+  font-weight: 700;
+  min-height: 18px;
+  margin-bottom: 8px;
+}
 
-    .app-sub { font-size: 0.75rem; color: #d7e3f2; margin-top: 2px; }
-    .selectors { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 10px; }
-    .selectors select { min-height: 40px; font-size: 0.82rem; font-weight: 800; }
+.quick-box {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--line);
+}
 
-    .content { max-width: 860px; margin: 0 auto; padding: 14px; }
-    .summary-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+.quick-title {
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
 
-    .summary-box {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: var(--r-md);
-      padding: 12px;
-      box-shadow: var(--shadow);
-      border-top: 4px solid var(--navy);
-    }
+.quick-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+}
 
-    .summary-box.in { border-top-color: var(--green); }
-    .summary-lbl { font-size: 0.76rem; color: var(--muted); font-weight: 700; margin-bottom: 4px; }
-    .summary-val { font-size: 1.2rem; font-weight: 900; color: var(--navy); }
-    .summary-box.in .summary-val { color: var(--green); }
+.quick-btn {
+  text-align: right;
+  background: var(--surface-soft);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 7px 9px;
+  cursor: pointer;
+  font-family: inherit;
+}
 
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: var(--r-lg);
-      padding: 14px;
-      margin-bottom: 14px;
-      box-shadow: var(--shadow);
-    }
+.quick-btn strong { display: block; font-size: 0.76rem; color: var(--navy); }
+.quick-btn span { display: block; font-size: 0.68rem; color: var(--muted); }
 
-    .card-head {
-      font-size: 0.94rem;
-      font-weight: 900;
-      color: var(--navy);
-      padding-bottom: 8px;
-      margin-bottom: 12px;
-      border-bottom: 1px solid var(--line);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+.app-top {
+  background: linear-gradient(150deg, #08182e 0%, var(--navy) 55%, var(--navy-soft) 100%);
+  color: #fff;
+  padding: 15px 15px 18px;
+  border-bottom-left-radius: 22px;
+  border-bottom-right-radius: 22px;
+  border-bottom: 3px solid var(--gold);
+  box-shadow: var(--shadow);
+}
 
-    .card-head::after {
-      content: "";
-      width: 22px;
-      height: 4px;
-      border-radius: 99px;
-      background: var(--gold);
-    }
+.app-top-bar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+}
 
-    .fields-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    .full { grid-column: 1 / -1; }
+.app-sub { font-size: 0.75rem; color: #d7e3f2; margin-top: 2px; }
+.sync-status { font-size: 0.72rem; color: #f8d781; font-weight: 700; margin-top: 3px; }
+.selectors { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 10px; }
+.selectors select { min-height: 40px; font-size: 0.82rem; font-weight: 800; }
 
-    .table-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid var(--line); }
-    table { width: 100%; border-collapse: collapse; font-size: 0.8rem; min-width: 460px; }
-    th, td { padding: 9px 8px; text-align: right; border-bottom: 1px solid var(--line); }
-    th { background: var(--bg); color: var(--navy); font-weight: 800; }
-    tr:last-child td { border-bottom: none; }
+.content { max-width: 900px; margin: 0 auto; padding: 14px; }
+.summary-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 14px; }
 
-    .badge-in {
-      display: inline-block;
-      padding: 2px 7px;
-      border-radius: 999px;
-      font-size: 0.72rem;
-      font-weight: 800;
-      background: #e6f6ef;
-      color: var(--green);
-    }
+.summary-box {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  padding: 12px;
+  box-shadow: var(--shadow);
+  border-top: 4px solid var(--navy);
+}
 
-    .badge-out {
-      display: inline-block;
-      padding: 2px 7px;
-      border-radius: 999px;
-      font-size: 0.72rem;
-      font-weight: 800;
-      background: #fdecec;
-      color: var(--red);
-    }
+.summary-box.in { border-top-color: var(--green); }
+.summary-box.out { border-top-color: var(--red); }
+.summary-box.net { border-top-color: var(--gold); }
+.summary-lbl { font-size: 0.75rem; color: var(--muted); font-weight: 700; margin-bottom: 4px; }
+.summary-val { font-size: 1.15rem; font-weight: 900; color: var(--navy); }
+.summary-box.in .summary-val { color: var(--green); }
+.summary-box.out .summary-val { color: var(--red); }
 
-    .item-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      padding: 10px;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      margin-bottom: 8px;
-      background: #fafbfd;
-      font-size: 0.85rem;
-    }
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 14px;
+  margin-bottom: 14px;
+  box-shadow: var(--shadow);
+}
 
-    .item-sub { font-size: 0.76rem; color: var(--muted); }
-    .section { display: none; }
-    .section.active { display: block; }
+.card-head {
+  font-size: 0.94rem;
+  font-weight: 900;
+  color: var(--navy);
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-    .app-nav {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: rgba(255, 255, 255, 0.97);
-      backdrop-filter: blur(10px);
-      border-top: 1px solid var(--line);
-      box-shadow: 0 -6px 20px rgba(10, 31, 58, 0.08);
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      padding: 4px 3px calc(4px + env(safe-area-inset-bottom));
-      z-index: 40;
-    }
+.card-head::after {
+  content: "";
+  width: 22px;
+  height: 4px;
+  border-radius: 99px;
+  background: var(--gold);
+}
 
-    .nav-item {
-      background: none;
-      border: none;
-      padding: 8px 2px;
-      border-radius: 10px;
-      font-size: 0.7rem;
-      font-weight: 800;
-      font-family: inherit;
-      color: var(--muted);
-      cursor: pointer;
-    }
+.fields-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.full { grid-column: 1 / -1; }
 
-    .nav-item.active {
-      color: var(--navy);
-      background: var(--gold-bg);
-      box-shadow: inset 0 -2px 0 var(--gold);
-    }
-  </style>
+.table-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid var(--line); }
+table { width: 100%; border-collapse: collapse; font-size: 0.8rem; min-width: 480px; }
+th, td { padding: 9px 8px; text-align: right; border-bottom: 1px solid var(--line); }
+th { background: var(--bg); color: var(--navy); font-weight: 800; }
+tr:last-child td { border-bottom: none; }
+
+.badge-in {
+  display: inline-block;
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  background: var(--green-bg);
+  color: var(--green);
+}
+
+.badge-out {
+  display: inline-block;
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  background: var(--red-bg);
+  color: var(--red);
+}
+
+.item-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  margin-bottom: 8px;
+  background: var(--surface-soft);
+  font-size: 0.85rem;
+}
+
+.item-sub { font-size: 0.76rem; color: var(--muted); }
+.cfg-msg { font-size: 0.82rem; font-weight: 700; margin-top: 8px; min-height: 20px; }
+.section { display: none; }
+.section.active { display: block; }
+
+.stmt-box {
+  background: var(--surface-soft);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  font-size: 0.84rem;
+}
+
+.app-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--line);
+  box-shadow: 0 -6px 20px rgba(10, 31, 58, 0.08);
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding: 4px 2px calc(4px + env(safe-area-inset-bottom));
+  z-index: 40;
+}
+
+.nav-item {
+  background: none;
+  border: none;
+  padding: 8px 1px;
+  border-radius: 10px;
+  font-size: 0.66rem;
+  font-weight: 800;
+  font-family: inherit;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.nav-item.active {
+  color: var(--navy);
+  background: var(--gold-bg);
+  box-shadow: inset 0 -2px 0 var(--gold);
+}
+
+.toast {
+  position: fixed;
+  bottom: 74px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--navy);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  z-index: 50;
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 600px) {
+  .summary-row { grid-template-columns: 1fr; }
+  .fields-2 { grid-template-columns: 1fr; }
+  .selectors { grid-template-columns: 1fr; }
+}
+
+@media print {
+  .app-nav, .btn, #exit-btn, .selectors, form { display: none !important; }
+  body { padding-bottom: 0; background: #fff; }
+}
+</style>
 </head>
 <body>
 
-  <template id="official-logo-tpl">
-    <svg viewBox="0 0 260 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="شعار مكتب أحمد ماهر">
-      <path d="M58 68 C62 45, 82 32, 102 33 C98 44, 88 53, 66 66 Z" fill="#174a9e"/>
-      <path d="M44 79 C58 64, 84 52, 114 47 C106 56, 86 66, 52 78 Z" fill="#174a9e"/>
-      <path d="M32 91 C54 76, 86 63, 124 58 C112 68, 84 79, 40 91 Z" fill="#174a9e"/>
-      <path d="M18 106 C66 84, 136 72, 226 68 L221 76 C144 80, 74 92, 18 106 Z" fill="#174a9e"/>
-      <path d="M214 75 C224 88, 224 106, 210 116 C216 105, 215 90, 207 76 Z" fill="#174a9e"/>
-      <text x="132" y="106" text-anchor="middle" fill="#174a9e"
-            font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="25" letter-spacing="0.4">
-        Ahmad Maher
-      </text>
-    </svg>
-  </template>
+<template id="official-logo-tpl">
+<svg viewBox="0 0 260 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="شعار مكتب أحمد ماهر">
+<path d="M58 68 C62 45, 82 32, 102 33 C98 44, 88 53, 66 66 Z" fill="#174a9e"/>
+<path d="M44 79 C58 64, 84 52, 114 47 C106 56, 86 66, 52 78 Z" fill="#174a9e"/>
+<path d="M32 91 C54 76, 86 63, 124 58 C112 68, 84 79, 40 91 Z" fill="#174a9e"/>
+<path d="M18 106 C66 84, 136 72, 226 68 L221 76 C144 80, 74 92, 18 106 Z" fill="#174a9e"/>
+<path d="M214 75 C224 88, 224 106, 210 116 C216 105, 215 90, 207 76 Z" fill="#174a9e"/>
+<text x="132" y="106" text-anchor="middle" fill="#174a9e"
+font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="25" letter-spacing="0.4">
+Ahmad Maher
+</text>
+</svg>
+</template>
 
-  <section id="login-view">
-    <div class="login-card">
-      <div class="login-brand">
-        <div class="brand-lockup">
-          <div class="logo-badge mount-logo"></div>
-          <div>
-            <div class="brand-h1">مكتب أحمد ماهر للتخليص والتوكيلات التجارية</div>
-            <span class="brand-pill">النظام المحاسبي • صنعاء – شارع الخمسين</span>
-          </div>
-        </div>
-        <div class="login-meta">إدارة الفروع • العهد • العملاء • الموظفون • التقارير</div>
+<section id="login-view">
+<div class="login-card">
+<div class="login-brand">
+<div class="brand-lockup">
+<div class="logo-badge mount-logo"></div>
+<div>
+<div class="brand-h1">مكتب أحمد ماهر للتخليص والتوكيلات التجارية</div>
+<span class="brand-pill">النظام المحاسبي • صنعاء – شارع الخمسين</span>
+</div>
+</div>
+<div class="login-meta">إدارة الفروع • العهد • العملاء • الموظفون • التقارير • ربط Supabase</div>
+</div>
+
+<form id="login-form">
+<div class="form-group">
+<label for="user-input">اسم المستخدم</label>
+<input id="user-input" type="text" value="admin" required />
+</div>
+<div class="form-group">
+<label for="pass-input">كلمة المرور</label>
+<div class="pass-row">
+<input id="pass-input" type="password" value="123" required />
+<button id="toggle-pass-btn" type="button" class="btn btn-muted btn-sm">إظهار</button>
+</div>
+</div>
+<div id="login-err" class="login-err"></div>
+<button id="login-btn" type="submit" class="btn btn-primary">تسجيل الدخول إلى النظام</button>
+<div style="margin-top:8px;">
+<button id="reset-demo-btn" type="button" class="btn btn-muted btn-sm" style="width:100%">إعادة ضبط البيانات الافتراضية</button>
+</div>
+</form>
+
+<div class="quick-box">
+<div class="quick-title">دخول سريع للتجربة:</div>
+<div id="quick-users" class="quick-grid"></div>
+</div>
+</div>
+</section>
+
+<section id="app-view" class="hidden">
+<header class="app-top">
+<div class="app-top-bar">
+<div class="brand-lockup">
+<div class="logo-badge mount-logo"></div>
+<div>
+<div class="brand-h1">مكتب أحمد ماهر للتخليص والتوكيلات التجارية</div>
+<div id="active-user-sub" class="app-sub">مدير النظام الرئيسي (المدير العام) • صنعاء – شارع الخمسين</div>
+<div id="sync-status" class="sync-status">وضع التخزين المحلي (جاهز للربط مع Supabase)</div>
+</div>
+</div>
+<button id="exit-btn" type="button" class="btn btn-exit">خروج</button>
+</div>
+
+<div class="selectors">
+<select id="filter-branch"></select>
+<select id="filter-currency">
+<option value="YER">ريال يمني (YER)</option>
+<option value="SAR">ريال سعودي (SAR)</option>
+<option value="USD">دولار أمريكي (USD)</option>
+</select>
+</div>
+</header>
+
+<main class="content">
+<div id="sec-home" class="section active">
+<div class="summary-row">
+<div class="summary-box in">
+<div class="summary-lbl">المقبوضات والإيرادات (<span class="c-tag">YER</span>)</div>
+<div id="sum-in" class="summary-val">0</div>
+</div>
+<div class="summary-box out">
+<div class="summary-lbl">المصروفات (<span class="c-tag">YER</span>)</div>
+<div id="sum-out" class="summary-val">0</div>
+</div>
+<div class="summary-box net">
+<div class="summary-lbl">الصافي (<span class="c-tag">YER</span>)</div>
+<div id="sum-net" class="summary-val">0</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-head">إضافة عملية مالية سريعة</div>
+<form id="entry-form" class="fields-2">
+<div class="form-group">
+<label for="entry-branch">الفرع</label>
+<select id="entry-branch"></select>
+</div>
+<div class="form-group">
+<label for="entry-type">النوع</label>
+<select id="entry-type">
+<option value="RECEIPT">سند قبض (+)</option>
+<option value="INCOME">إيراد تخليص (+)</option>
+<option value="EXPENSE">مصروف (-)</option>
+</select>
+</div>
+<div class="form-group">
+<label for="entry-client">العميل</label>
+<select id="entry-client"></select>
+</div>
+<div class="form-group">
+<label for="entry-amount">المبلغ</label>
+<input id="entry-amount" type="number" step="0.01" inputmode="decimal" placeholder="0.00" required />
+</div>
+<div class="form-group full">
+<label for="entry-note">البيان</label>
+<input id="entry-note" type="text" placeholder="رقم بيان / ملاحظة" />
+</div>
+<div class="full">
+<button type="submit" class="btn btn-save">حفظ العملية</button>
+</div>
+</form>
+</div>
+
+<div class="card">
+<div class="card-head">آخر العمليات</div>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>التاريخ</th>
+<th>الفرع</th>
+<th>النوع</th>
+<th>العميل / البيان</th>
+<th>المبلغ</th>
+</tr>
+</thead>
+<tbody id="entry-list"></tbody>
+</table>
+</div>
+</div>
+</div>
+
+<div id="sec-advances" class="section">
+<div class="card">
+<div class="card-head">إضافة عهدة جديدة</div>
+<form id="advance-form" class="fields-2">
+<div class="form-group">
+<label for="adv-person">الموظف / المستلم</label>
+<input id="adv-person" type="text" placeholder="اسم الموظف" required />
+</div>
+<div class="form-group">
+<label for="adv-branch">الفرع</label>
+<select id="adv-branch"></select>
+</div>
+<div class="form-group">
+<label for="adv-amount">مبلغ العهدة</label>
+<input id="adv-amount" type="number" step="0.01" inputmode="decimal" placeholder="0.00" required />
+</div>
+<div class="form-group">
+<label for="adv-note">الغرض / البيان</label>
+<input id="adv-note" type="text" placeholder="مصاريف جمركية / نقل" />
+</div>
+<div class="full">
+<button type="submit" class="btn btn-gold">إضافة العهدة</button>
+</div>
+</form>
+</div>
+
+<div class="card">
+<div class="card-head">سجل العهد (<span id="adv-count">0</span>)</div>
+<div id="adv-list"></div>
+</div>
+</div>
+
+<div id="sec-branches" class="section">
+<div class="card">
+<div class="card-head">إضافة فرع جديد</div>
+<form id="branch-form" class="fields-2">
+<div class="form-group">
+<label for="new-branch-code">رمز الفرع</label>
+<input id="new-branch-code" type="text" placeholder="مثال: ADE" />
+</div>
+<div class="form-group">
+<label for="new-branch-city">المدينة</label>
+<input id="new-branch-city" type="text" placeholder="مثال: عدن" />
+</div>
+<div class="form-group full">
+<label for="new-branch-name">اسم الفرع</label>
+<input id="new-branch-name" type="text" placeholder="مثال: فرع ميناء عدن" required />
+</div>
+<div class="full">
+<button type="submit" class="btn btn-primary">إضافة الفرع</button>
+</div>
+</form>
+</div>
+
+<div class="card">
+<div class="card-head">الفروع والمنافذ (<span id="branch-count">0</span>)</div>
+<div id="branch-list"></div>
+</div>
+</div>
+
+<div id="sec-clients" class="section">
+<div class="card">
+<div class="card-head">إضافة عميل جديد</div>
+<form id="client-form" class="fields-2">
+<div class="form-group">
+<label for="client-name">اسم العميل</label>
+<input id="client-name" type="text" placeholder="اسم العميل أو الشركة" required />
+</div>
+<div class="form-group">
+<label for="client-phone">رقم الهاتف</label>
+<input id="client-phone" type="tel" placeholder="77xxxxxxx" />
+</div>
+<div class="form-group full">
+<label for="client-balance">الرصيد الافتتاحي</label>
+<input id="client-balance" type="number" step="0.01" inputmode="decimal" placeholder="0.00" />
+</div>
+<div class="full">
+<button type="submit" class="btn btn-save">إضافة العميل</button>
+</div>
+</form>
+</div>
+
+<div class="card">
+<div class="card-head">كشف حساب عميل وقائمة العملاء (<span id="client-count">0</span>)</div>
+<div class="form-group">
+<label for="stmt-client">اختر عميلاً لعرض كشف الحساب</label>
+<select id="stmt-client"></select>
+</div>
+<div id="stmt-box" class="stmt-box"></div>
+<div id="client-list"></div>
+</div>
+</div>
+
+<div id="sec-staff" class="section">
+<div class="card">
+<div class="card-head">إضافة موظف جديد</div>
+<form id="staff-form" class="fields-2">
+<div class="form-group">
+<label for="staff-name">اسم الموظف</label>
+<input id="staff-name" type="text" placeholder="الاسم الثلاثي" required />
+</div>
+<div class="form-group">
+<label for="staff-role">المسمى الوظيفي</label>
+<input id="staff-role" type="text" placeholder="مخلص جمركي / محاسب" required />
+</div>
+<div class="form-group">
+<label for="staff-branch">الفرع</label>
+<select id="staff-branch"></select>
+</div>
+<div class="form-group">
+<label for="staff-salary">الراتب</label>
+<input id="staff-salary" type="number" step="0.01" inputmode="decimal" placeholder="0.00" />
+</div>
+<div class="full">
+<button type="submit" class="btn btn-primary">إضافة الموظف</button>
+</div>
+</form>
+</div>
+
+<div class="card">
+<div class="card-head">قائمة الموظفين (<span id="staff-count">0</span>)</div>
+<div id="staff-list"></div>
+</div>
+</div>
+
+<div id="sec-reports" class="section">
+<div class="card">
+<div class="card-head">ملخص التقرير المالي</div>
+<p id="report-summary" style="font-size:0.9rem;color:var(--ink);line-height:1.75;margin-bottom:12px;"></p>
+<button type="button" id="print-report-btn" class="btn btn-primary">طباعة / حفظ PDF</button>
+</div>
+</div>
+
+<div id="sec-connect" class="section">
+<div class="card">
+<div class="card-head">ربط قاعدة البيانات السحابية (Supabase)</div>
+<div class="form-group">
+<label for="sb-url">Project URL</label>
+<input id="sb-url" type="url" placeholder="https://xxxxxxxxxxxx.supabase.co" />
+</div>
+<div class="form-group">
+<label for="sb-key">anon public key</label>
+<input id="sb-key" type="text" placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." />
+</div>
+<div class="fields-2">
+<button type="button" id="save-sb-btn" class="btn btn-save">حفظ وربط</button>
+<button type="button" id="test-sb-btn" class="btn btn-gold">اختبار ومزامنة</button>
+</div>
+<div id="sb-msg" class="cfg-msg"></div>
+</div>
+</div>
+</main>
+
+<nav class="app-nav">
+<button type="button" class="nav-item active" data-sec="home">الرئيسية</button>
+<button type="button" class="nav-item" data-sec="advances">العهد</button>
+<button type="button" class="nav-item" data-sec="branches">الفروع</button>
+<button type="button" class="nav-item" data-sec="clients">العملاء</button>
+<button type="button" class="nav-item" data-sec="staff">الموظفون</button>
+<button type="button" class="nav-item" data-sec="reports">التقارير</button>
+<button type="button" class="nav-item" data-sec="connect">الربط</button>
+</nav>
+</section>
+
+<div id="toast" class="toast hidden"></div>
+
+<script>
+const STORAGE_KEY = "AHMAD_MAHER_ACCOUNTING_FULL_V1";
+const SB_CONFIG_KEY = "AHMAD_MAHER_SB_CONFIG_V1";
+
+const DEFAULT_DATA = {
+  branches: [
+    { id: "HQ-SAN", code: "HQ-SAN", name: "الإدارة العامة – شارع الخمسين", city: "صنعاء" },
+    { id: "HOD", code: "HOD", name: "فرع ميناء الحديدة", city: "الحديدة" },
+    { id: "JAD", code: "JAD", name: "فرع مركز الجاد الجمركي", city: "الجاد" },
+    { id: "DHM", code: "DHM", name: "فرع جمرك ذمار", city: "ذمار" },
+    { id: "AFR", code: "AFR", name: "فرع جمرك عفار", city: "عفار" },
+    { id: "RHD", code: "RHD", name: "فرع جمرك الراهدة", city: "الراهدة" },
+    { id: "NHM", code: "NHM", name: "فرع جمرك نهم", city: "نهم" },
+    { id: "SAN", code: "SAN", name: "فرع جمرك صنعاء", city: "صنعاء" }
+  ],
+  users: [
+    { user: "admin", pass: "123", name: "مدير النظام الرئيسي", role: "المدير العام" },
+    { user: "ahmad_maher", pass: "123", name: "أحمد عبدالمجيد محمد ماهر", role: "المدير العام" },
+    { user: "hesham_maher", pass: "123", name: "هشام يحيى عبدالمجيد ماهر", role: "مسؤول العمليات والبيانات" },
+    { user: "waleed_alkahali", pass: "123", name: "وليد عبده طاهر الكهالي", role: "محاسب فرع ذمار" }
+  ],
+  clients: [
+    { id: "c1", name: "مؤسسة الأسعد التجارية", phone: "", balance: 0 },
+    { id: "c2", name: "مؤسسة جميل حسين للأثاث", phone: "", balance: 0 },
+    { id: "c3", name: "شركة فتكو الأولى", phone: "", balance: 0 },
+    { id: "c4", name: "شركة توب فود", phone: "", balance: 0 },
+    { id: "c5", name: "نور اليمن", phone: "", balance: 0 }
+  ],
+  txs: [
+    { id: "t1", date: "2026-11-21", branchId: "DHM", type: "RECEIPT", clientId: "c1", amount: 500000, currency: "YER", note: "دفعة حساب أولية" },
+    { id: "t2", date: "2026-11-21", branchId: "HOD", type: "INCOME", clientId: "c3", amount: 800, currency: "USD", note: "أتعاب تخليص جمركي" }
+  ],
+  advances: [
+    { id: "a1", person: "وليد عبده طاهر الكهالي", branchId: "DHM", amount: 150000, currency: "YER", note: "عهدة متابعة بيان", status: "مفتوحة" }
+  ],
+  staff: [
+    { id: "s1", name: "أحمد عبدالمجيد محمد ماهر", role: "المدير العام", branchId: "HQ-SAN", salary: 0 },
+    { id: "s2", name: "هشام يحيى عبدالمجيد ماهر", role: "مسؤول العمليات والبيانات", branchId: "HQ-SAN", salary: 0 },
+    { id: "s3", name: "وليد عبده طاهر الكهالي", role: "محاسب فرع ذمار", branchId: "DHM", salary: 0 }
+  ]
+};
+
+let db = loadDB();
+let currentUser = null;
+
+function loadDB() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) return Object.assign({}, JSON.parse(JSON.stringify(DEFAULT_DATA)), JSON.parse(raw));
+  } catch (e) {}
+  return JSON.parse(JSON.stringify(DEFAULT_DATA));
+}
+
+function saveDB() {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(db)); } catch (e) {}
+}
+
+function resetDemoData() {
+  db = JSON.parse(JSON.stringify(DEFAULT_DATA));
+  saveDB();
+  renderQuickUsers();
+  populateSelects();
+  renderAll();
+  showToast("تمت إعادة ضبط البيانات الافتراضية");
+}
+
+function loadSBConfig() {
+  try { return JSON.parse(localStorage.getItem(SB_CONFIG_KEY) || "{}"); } catch (e) { return {}; }
+}
+
+function saveSBConfig(cfg) {
+  try { localStorage.setItem(SB_CONFIG_KEY, JSON.stringify(cfg)); } catch (e) {}
+}
+
+function mountLogos() {
+  const tpl = document.getElementById("official-logo-tpl");
+  if (!tpl) return;
+  document.querySelectorAll(".mount-logo").forEach(box => {
+    box.innerHTML = "";
+    box.appendChild(tpl.content.cloneNode(true));
+  });
+}
+
+function showToast(msg) {
+  const el = document.getElementById("toast");
+  el.textContent = msg;
+  el.classList.remove("hidden");
+  clearTimeout(window._toastTimer);
+  window._toastTimer = setTimeout(() => el.classList.add("hidden"), 2300);
+}
+
+function fmt(n) {
+  return Number(n || 0).toLocaleString("en-US", { maximumFractionDigits: 2 });
+}
+
+function branchName(id) {
+  const b = db.branches.find(x => x.id === id);
+  return b ? b.name : id;
+}
+
+function clientName(id) {
+  const c = db.clients.find(x => x.id === id);
+  return c ? c.name : "بدون عميل";
+}
+
+function renderQuickUsers() {
+  const box = document.getElementById("quick-users");
+  if (!box) return;
+  box.innerHTML = db.users.map(u => `
+    <button type="button" class="quick-btn" data-u="${u.user}" data-p="${u.pass}">
+      <strong>${u.name}</strong>
+      <span>${u.user} / ${u.pass}</span>
+    </button>
+  `).join("");
+
+  box.querySelectorAll(".quick-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.getElementById("user-input").value = btn.dataset.u;
+      document.getElementById("pass-input").value = btn.dataset.p;
+      doLogin();
+    });
+  });
+}
+
+function doLogin(e) {
+  if (e) e.preventDefault();
+  const u = (document.getElementById("user-input").value || "").trim();
+  const p = (document.getElementById("pass-input").value || "").trim();
+  const errEl = document.getElementById("login-err");
+
+  const found = db.users.find(item => item.user === u && item.pass === p);
+  if (!found) {
+    errEl.textContent = "بيانات الدخول غير صحيحة (الافتراضي: admin / 123)";
+    return false;
+  }
+
+  errEl.textContent = "";
+  currentUser = found;
+  document.getElementById("login-view").classList.add("hidden");
+  document.getElementById("app-view").classList.remove("hidden");
+  document.getElementById("active-user-sub").textContent = `${found.name} (${found.role}) • صنعاء – شارع الخمسين`;
+
+  initSBInputs();
+  refreshSyncBadge();
+  populateSelects();
+  renderAll();
+  showToast("تم تسجيل الدخول بنجاح");
+  return false;
+}
+
+function doLogout() {
+  currentUser = null;
+  document.getElementById("app-view").classList.add("hidden");
+  document.getElementById("login-view").classList.remove("hidden");
+  renderQuickUsers();
+  showToast("تم تسجيل الخروج");
+}
+
+function switchSection(secName) {
+  document.querySelectorAll(".section").forEach(s => s.classList.remove("active"));
+  const target = document.getElementById("sec-" + secName);
+  if (target) target.classList.add("active");
+
+  document.querySelectorAll(".nav-item").forEach(btn => {
+    btn.classList.toggle("active", btn.dataset.sec === secName);
+  });
+}
+
+function populateSelects() {
+  const prevFilterBranch = document.getElementById("filter-branch").value || "ALL";
+  const prevStmtClient = document.getElementById("stmt-client").value;
+
+  const branchOpts = db.branches.map(b => `<option value="${b.id}">${b.name}${b.city ? " (" + b.city + ")" : ""}</option>`).join("");
+  document.getElementById("filter-branch").innerHTML = `<option value="ALL">كل الفروع (${db.branches.length})</option>` + branchOpts;
+  document.getElementById("filter-branch").value = db.branches.some(b => b.id === prevFilterBranch) ? prevFilterBranch : "ALL";
+
+  document.getElementById("entry-branch").innerHTML = branchOpts;
+  document.getElementById("adv-branch").innerHTML = branchOpts;
+  document.getElementById("staff-branch").innerHTML = branchOpts;
+
+  const clientOpts = db.clients.map(c => `<option value="${c.id}">${c.name}</option>`).join("");
+  document.getElementById("entry-client").innerHTML = `<option value="">-- بدون عميل --</option>` + clientOpts;
+  document.getElementById("stmt-client").innerHTML = clientOpts || `<option value="">-- لا يوجد عملاء --</option>`;
+  if (prevStmtClient && db.clients.some(c => c.id === prevStmtClient)) {
+    document.getElementById("stmt-client").value = prevStmtClient;
+  }
+}
+
+function filteredTxs() {
+  const bf = document.getElementById("filter-branch").value || "ALL";
+  const cf = document.getElementById("filter-currency").value || "YER";
+  return db.txs.filter(t => (bf === "ALL" || t.branchId === bf) && t.currency === cf);
+}
+
+function typeLabel(type) {
+  if (type === "RECEIPT") return `<span class="badge-in">سند قبض (+)</span>`;
+  if (type === "INCOME") return `<span class="badge-in">إيراد تخليص (+)</span>`;
+  return `<span class="badge-out">مصروف (-)</span>`;
+}
+
+function renderStatement() {
+  const cid = document.getElementById("stmt-client").value;
+  const cf = document.getElementById("filter-currency").value || "YER";
+  const box = document.getElementById("stmt-box");
+  const cl = db.clients.find(c => c.id === cid);
+  if (!cl) {
+    box.innerHTML = "اختر عميلاً لعرض كشف حسابه.";
+    return;
+  }
+  const list = db.txs.filter(t => t.clientId === cid && t.currency === cf);
+  const inSum = list.filter(t => t.type !== "EXPENSE").reduce((s, x) => s + Number(x.amount || 0), 0);
+  const outSum = list.filter(t => t.type === "EXPENSE").reduce((s, x) => s + Number(x.amount || 0), 0);
+  box.innerHTML = `
+    <strong>العميل:</strong> ${cl.name} (${cf})<br>
+    <strong>إجمالي المقبوضات/الإيرادات:</strong> ${fmt(inSum)} ${cf} |
+    <strong>إجمالي المصروفات:</strong> ${fmt(outSum)} ${cf} |
+    <strong>الرصيد المسجل:</strong> ${fmt(cl.balance)} ${cf}
+  `;
+}
+
+function renderAll() {
+  const cf = document.getElementById("filter-currency").value || "YER";
+  document.querySelectorAll(".c-tag").forEach(el => { el.textContent = cf; });
+
+  const list = filteredTxs();
+  const totalIn = list.filter(t => t.type !== "EXPENSE").reduce((sum, t) => sum + Number(t.amount || 0), 0);
+  const totalOut = list.filter(t => t.type === "EXPENSE").reduce((sum, t) => sum + Number(t.amount || 0), 0);
+  const totalNet = totalIn - totalOut;
+
+  document.getElementById("sum-in").textContent = fmt(totalIn);
+  document.getElementById("sum-out").textContent = fmt(totalOut);
+  document.getElementById("sum-net").textContent = fmt(totalNet);
+
+  document.getElementById("entry-list").innerHTML = list.slice().reverse().map(t => `
+    <tr>
+      <td>${t.date}</td>
+      <td>${branchName(t.branchId)}</td>
+      <td>${typeLabel(t.type)}</td>
+      <td>${clientName(t.clientId)}${t.note ? " — " + t.note : ""}</td>
+      <td><strong>${fmt(t.amount)} ${t.currency}</strong></td>
+    </tr>
+  `).join("") || `<tr><td colspan="5">لا توجد عمليات مسجلة لهذه العملة أو الفرع</td></tr>`;
+
+  renderAdvances();
+  renderBranches();
+  renderClients();
+  renderStaff();
+  renderStatement();
+  renderReport(cf, list.length, totalIn, totalOut, totalNet);
+}
+
+function renderAdvances() {
+  document.getElementById("adv-count").textContent = db.advances.length;
+  document.getElementById("adv-list").innerHTML = db.advances.map(a => `
+    <div class="item-row">
+      <div>
+        <strong>${a.person}</strong> — <span>${fmt(a.amount)} ${a.currency || "YER"}</span>
+        <div class="item-sub">${branchName(a.branchId)} • ${a.note || "عهدة"} • الحالة: ${a.status}</div>
       </div>
-
-      <form id="login-form" onsubmit="return handleLoginSubmit(event)">
-        <div class="form-group">
-          <label for="user-input">اسم المستخدم</label>
-          <input id="user-input" type="text" value="admin" required />
-        </div>
-        <div class="form-group">
-          <label for="pass-input">كلمة المرور</label>
-          <input id="pass-input" type="password" value="123" required />
-        </div>
-        <div id="login-err" class="login-err"></div>
-        <button id="login-btn" type="submit" class="btn btn-primary" onclick="handleLoginClick(event)">تسجيل الدخول</button>
-      </form>
+      <div style="display:flex;gap:6px;">
+        ${a.status === "مفتوحة" ? `<button type="button" class="btn btn-save btn-sm" onclick="settleAdvance('${a.id}')">تصفية</button>` : ""}
+        <button type="button" class="btn btn-del" onclick="deleteAdvance('${a.id}')">حذف</button>
+      </div>
     </div>
-  </section>
+  `).join("") || `<div class="item-sub">لا توجد عهد مسجلة</div>`;
+}
 
-  <section id="app-view">
-    <header class="app-top">
-      <div class="app-top-bar">
-        <div class="brand-lockup">
-          <div class="logo-badge mount-logo"></div>
-          <div>
-            <div class="brand-h1">مكتب أحمد ماهر للتخليص والتوكيلات التجارية</div>
-            <div class="app-sub">مدير النظام الرئيسي (المدير العام) • صنعاء – شارع الخمسين</div>
-          </div>
-        </div>
-        <button id="exit-btn" type="button" class="btn btn-exit" onclick="handleLogout()">خروج</button>
+function settleAdvance(id) {
+  const item = db.advances.find(a => a.id === id);
+  if (item) {
+    item.status = "مسوّاة";
+    saveDB();
+    renderAdvances();
+    showToast("تمت تصفية العهدة");
+  }
+}
+
+function deleteAdvance(id) {
+  db.advances = db.advances.filter(a => a.id !== id);
+  saveDB();
+  renderAdvances();
+  showToast("تم حذف العهدة");
+}
+
+function renderBranches() {
+  document.getElementById("branch-count").textContent = db.branches.length;
+  document.getElementById("branch-list").innerHTML = db.branches.map(b => `
+    <div class="item-row">
+      <div><strong>${b.name}</strong><div class="item-sub">الرمز: ${b.code || b.id}${b.city ? " • المدينة: " + b.city : ""}</div></div>
+    </div>
+  `).join("");
+}
+
+function renderClients() {
+  document.getElementById("client-count").textContent = db.clients.length;
+  document.getElementById("client-list").innerHTML = db.clients.map(c => `
+    <div class="item-row">
+      <div>
+        <strong>${c.name}</strong>
+        <div class="item-sub">${c.phone ? "هاتف: " + c.phone : "بدون هاتف"} • الرصيد: ${fmt(c.balance)}</div>
       </div>
+      <button type="button" class="btn btn-del" onclick="deleteClient('${c.id}')">حذف</button>
+    </div>
+  `).join("");
+}
 
-      <div class="selectors">
-        <select id="filter-branch" onchange="renderAll()"></select>
-        <select id="filter-currency" onchange="renderAll()">
-          <option value="YER">ريال يمني (YER)</option>
-          <option value="SAR">ريال سعودي (SAR)</option>
-          <option value="USD">دولار أمريكي (USD)</option>
-        </select>
+function deleteClient(id) {
+  db.clients = db.clients.filter(c => c.id !== id);
+  saveDB();
+  populateSelects();
+  renderAll();
+  showToast("تم حذف العميل");
+}
+
+function renderStaff() {
+  document.getElementById("staff-count").textContent = db.staff.length;
+  document.getElementById("staff-list").innerHTML = db.staff.map(s => `
+    <div class="item-row">
+      <div>
+        <strong>${s.name}</strong> — <span class="item-sub">${s.role}</span>
+        <div class="item-sub">${branchName(s.branchId)}${s.salary ? " • الراتب: " + fmt(s.salary) : ""}</div>
       </div>
-    </header>
+      <button type="button" class="btn btn-del" onclick="deleteStaff('${s.id}')">حذف</button>
+    </div>
+  `).join("");
+}
 
-    <main class="content">
-      <div id="sec-home" class="section active">
-        <div class="summary-row">
-          <div class="summary-box in">
-            <div class="summary-lbl">المقبوضات والإيرادات (<span class="c-tag">YER</span>)</div>
-            <div id="sum-in" class="summary-val">0</div>
-          </div>
-          <div class="summary-box">
-            <div class="summary-lbl">المصروفات (<span class="c-tag">YER</span>)</div>
-            <div id="sum-out" class="summary-val">0</div>
-          </div>
-        </div>
+function deleteStaff(id) {
+  db.staff = db.staff.filter(s => s.id !== id);
+  saveDB();
+  renderStaff();
+  showToast("تم حذف الموظف");
+}
 
-        <div class="card">
-          <div class="card-head">إضافة عملية مالية سريعة</div>
-          <form id="entry-form" class="fields-2" onsubmit="addEntry(event)">
-            <div class="form-group">
-              <label for="entry-branch">الفرع</label>
-              <select id="entry-branch"></select>
-            </div>
-            <div class="form-group">
-              <label for="entry-type">النوع</label>
-              <select id="entry-type">
-                <option value="RECEIPT">سند قبض (+)</option>
-                <option value="PAYMENT">سند صرف (-)</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="entry-client">العميل</label>
-              <select id="entry-client"></select>
-            </div>
-            <div class="form-group">
-              <label for="entry-amount">المبلغ</label>
-              <input id="entry-amount" type="number" step="0.01" inputmode="decimal" placeholder="0.00" required />
-            </div>
-            <div class="form-group full">
-              <label for="entry-note">البيان</label>
-              <input id="entry-note" type="text" placeholder="رقم بيان / ملاحظة" />
-            </div>
-            <div class="full">
-              <button type="submit" class="btn btn-save">حفظ العملية</button>
-            </div>
-          </form>
-        </div>
+function renderReport(currency, count, inSum, outSum, net) {
+  document.getElementById("report-summary").innerHTML = `
+    <strong>الجهة:</strong> مكتب أحمد ماهر للتخليص والتوكيلات التجارية – صنعاء – شارع الخمسين<br>
+    <strong>العملة:</strong> ${currency} | <strong>عدد العمليات:</strong> ${count}<br>
+    <strong>إجمالي المقبوضات والإيرادات:</strong> ${fmt(inSum)} ${currency}<br>
+    <strong>إجمالي المصروفات:</strong> ${fmt(outSum)} ${currency}<br>
+    <strong>الصافي:</strong> ${fmt(net)} ${currency}
+  `;
+}
 
-        <div class="card">
-          <div class="card-head">آخر العمليات</div>
-          <div class="table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th>التاريخ</th>
-                  <th>الفرع</th>
-                  <th>النوع</th>
-                  <th>العميل / البيان</th>
-                  <th>المبلغ</th>
-                </tr>
-              </thead>
-              <tbody id="entry-list"></tbody>
-            </table>
-          </div>
-        </div>
-      </div>
+function initSBInputs() {
+  const cfg = loadSBConfig();
+  document.getElementById("sb-url").value = cfg.url || "";
+  document.getElementById("sb-key").value = cfg.key || "";
+}
 
-      <div id="sec-advances" class="section">
-        <div class="card">
-          <div class="card-head">إضافة عهدة جديدة</div>
-          <form id="advance-form" class="fields-2" onsubmit="addAdvance(event)">
-            <div class="form-group">
-              <label for="adv-person">الموظف / المستلم</label>
-              <input id="adv-person" type="text" placeholder="اسم الموظف" required />
-            </div>
-            <div class="form-group">
-              <label for="adv-branch">الفرع</label>
-              <select id="adv-branch"></select>
-            </div>
-            <div class="form-group">
-              <label for="adv-amount">مبلغ العهدة</label>
-              <input id="adv-amount" type="number" step="0.01" inputmode="decimal" placeholder="0.00" required />
-            </div>
-            <div class="form-group">
-              <label for="adv-note">الغرض / البيان</label>
-              <input id="adv-note" type="text" placeholder="مصاريف جمركية / نقل" />
-            </div>
-            <div class="full">
-              <button type="submit" class="btn btn-gold">إضافة العهدة</button>
-            </div>
-          </form>
-        </div>
+function refreshSyncBadge() {
+  const cfg = loadSBConfig();
+  const badge = document.getElementById("sync-status");
+  if (cfg.url && cfg.key) {
+    badge.textContent = "تم حفظ إعدادات Supabase (جاهز للاختبار والمزامنة)";
+  } else {
+    badge.textContent = "وضع التخزين المحلي (جاهز للربط مع Supabase)";
+  }
+}
 
-        <div class="card">
-          <div class="card-head">سجل العهد (<span id="adv-count">0</span>)</div>
-          <div id="adv-list"></div>
-        </div>
-      </div>
+function saveSupabaseSettings() {
+  const url = (document.getElementById("sb-url").value || "").trim().replace(/\/+$/, "");
+  const key = (document.getElementById("sb-key").value || "").trim();
+  const msgEl = document.getElementById("sb-msg");
 
-      <div id="sec-branches" class="section">
-        <div class="card">
-          <div class="card-head">إضافة فرع جديد</div>
-          <form id="branch-form" class="fields-2" onsubmit="addBranch(event)">
-            <div class="form-group full">
-              <label for="new-branch-name">اسم الفرع</label>
-              <input id="new-branch-name" type="text" placeholder="مثال: فرع ميناء الحديدة" required />
-            </div>
-            <div class="full">
-              <button type="submit" class="btn btn-primary">إضافة الفرع</button>
-            </div>
-          </form>
-        </div>
+  if (!url.startsWith("https://") || !key) {
+    msgEl.style.color = "var(--red)";
+    msgEl.textContent = "يرجى إدخال Project URL صحيح يبدأ بـ https:// ومفتاح anon public.";
+    return;
+  }
 
-        <div class="card">
-          <div class="card-head">الفروع (<span id="branch-count">0</span>)</div>
-          <div id="branch-list"></div>
-        </div>
-      </div>
+  saveSBConfig({ url, key });
+  refreshSyncBadge();
+  msgEl.style.color = "var(--green)";
+  msgEl.textContent = "تم حفظ بيانات الربط محلياً. اضغط (اختبار ومزامنة) للتحقق من الاتصال.";
+  showToast("تم حفظ بيانات Supabase");
+}
 
-      <div id="sec-clients" class="section">
-        <div class="card">
-          <div class="card-head">إضافة عميل جديد</div>
-          <form id="client-form" class="fields-2" onsubmit="addClient(event)">
-            <div class="form-group">
-              <label for="client-name">اسم العميل</label>
-              <input id="client-name" type="text" placeholder="اسم العميل أو الشركة" required />
-            </div>
-            <div class="form-group">
-              <label for="client-phone">رقم الهاتف</label>
-              <input id="client-phone" type="tel" placeholder="77xxxxxxx" />
-            </div>
-            <div class="form-group full">
-              <label for="client-balance">الرصيد الافتتاحي</label>
-              <input id="client-balance" type="number" step="0.01" inputmode="decimal" placeholder="0.00" />
-            </div>
-            <div class="full">
-              <button type="submit" class="btn btn-save">إضافة العميل</button>
-            </div>
-          </form>
-        </div>
+async function testAndSyncSupabase() {
+  const cfg = loadSBConfig();
+  const msgEl = document.getElementById("sb-msg");
+  const url = (document.getElementById("sb-url").value || cfg.url || "").trim().replace(/\/+$/, "");
+  const key = (document.getElementById("sb-key").value || cfg.key || "").trim();
 
-        <div class="card">
-          <div class="card-head">قائمة العملاء (<span id="client-count">0</span>)</div>
-          <div id="client-list"></div>
-        </div>
-      </div>
+  if (!url || !key) {
+    msgEl.style.color = "var(--red)";
+    msgEl.textContent = "أدخل Project URL ومفتاح anon public أولاً.";
+    return;
+  }
 
-      <div id="sec-staff" class="section">
-        <div class="card">
-          <div class="card-head">إضافة موظف جديد</div>
-          <form id="staff-form" class="fields-2" onsubmit="addStaff(event)">
-            <div class="form-group">
-              <label for="staff-name">اسم الموظف</label>
-              <input id="staff-name" type="text" placeholder="الاسم الثلاثي" required />
-            </div>
-            <div class="form-group">
-              <label for="staff-role">المسمى الوظيفي</label>
-              <input id="staff-role" type="text" placeholder="مخلص جمركي / محاسب" required />
-            </div>
-            <div class="form-group">
-              <label for="staff-branch">الفرع</label>
-              <select id="staff-branch"></select>
-            </div>
-            <div class="form-group">
-              <label for="staff-salary">الراتب</label>
-              <input id="staff-salary" type="number" step="0.01" inputmode="decimal" placeholder="0.00" />
-            </div>
-            <div class="full">
-              <button type="submit" class="btn btn-primary">إضافة الموظف</button>
-            </div>
-          </form>
-        </div>
+  saveSBConfig({ url, key });
+  msgEl.style.color = "var(--navy)";
+  msgEl.textContent = "جاري اختبار الاتصال ومزامنة الفروع من Supabase...";
 
-        <div class="card">
-          <div class="card-head">قائمة الموظفين (<span id="staff-count">0</span>)</div>
-          <div id="staff-list"></div>
-        </div>
-      </div>
-
-      <div id="sec-reports" class="section">
-        <div class="card">
-          <div class="card-head">ملخص التقرير المالي</div>
-          <p id="report-summary" style="font-size:0.9rem;color:var(--ink);margin-bottom:14px;"></p>
-          <button type="button" class="btn btn-primary" onclick="window.print()">طباعة / تصدير PDF</button>
-        </div>
-      </div>
-    </main>
-
-    <nav class="app-nav">
-      <button type="button" class="nav-item active" data-sec="sec-home" onclick="switchTab(this)">الرئيسية</button>
-      <button type="button" class="nav-item" data-sec="sec-advances" onclick="switchTab(this)">العهد</button>
-      <button type="button" class="nav-item" data-sec="sec-branches" onclick="switchTab(this)">الفروع</button>
-      <button type="button" class="nav-item" data-sec="sec-clients" onclick="switchTab(this)">العملاء</button>
-      <button type="button" class="nav-item" data-sec="sec-staff" onclick="switchTab(this)">الموظفون</button>
-      <button type="button" class="nav-item" data-sec="sec-reports" onclick="switchTab(this)">التقارير</button>
-    </nav>
-  </section>
-
-  <script>
-    (function mountLogos() {
-      const tpl = document.getElementById("official-logo-tpl");
-      if (!tpl) return;
-      document.querySelectorAll(".mount-logo").forEach(el => {
-        if (!el.children.length) {
-          el.appendChild(tpl.content.cloneNode(true));
-        }
-      });
-    })();
-
-    const DEFAULT_BRANCHES = [
-      "الإدارة العامة – شارع الخمسين",
-      "فرع جمرك ذمار",
-      "فرع عدن",
-      "فرع الحديدة",
-      "فرع حرض / الميناء",
-      "فرع صنعاء الجمركي",
-      "فرع تعز",
-      "فرع المكلا"
-    ];
-
-    const STORE_KEY = "ahmad_maher_full_v3";
-
-    function loadDb() {
-      try {
-        const raw = localStorage.getItem(STORE_KEY);
-        if (raw) return JSON.parse(raw);
-      } catch (e) {}
-      return {
-        branches: DEFAULT_BRANCHES.slice(),
-        clients: [{ id: 1, name: "مؤسسة الأسعد التجارية", phone: "", balance: 0 }],
-        staff: [{ id: 1, name: "مهندس هشام ماهر", role: "عمليات وتخليص جمركي", branch: "الإدارة العامة – شارع الخمسين", salary: 0 }],
-        advances: [],
-        txs: [{
-          id: 1,
-          date: "2026-11-21",
-          branch: "فرع جمرك ذمار",
-          type: "RECEIPT",
-          client: "مؤسسة الأسعد التجارية",
-          note: "دفعة حساب بيان جمركي",
-          amount: 500000,
-          currency: "YER"
-        }]
-      };
-    }
-
-    let db = loadDb();
-
-    function save() {
-      try {
-        localStorage.setItem(STORE_KEY, JSON.stringify(db));
-      } catch (e) {}
-    }
-
-    function openApp() {
-      const errEl = document.getElementById("login-err");
-      const loginEl = document.getElementById("login-view");
-      const appEl = document.getElementById("app-view");
-      if (errEl) errEl.textContent = "";
-      if (loginEl) loginEl.style.display = "none";
-      if (appEl) appEl.style.display = "block";
-      renderAll();
-    }
-
-    function handleLoginClick(e) {
-      if (e) e.preventDefault();
-      const u = (document.getElementById("user-input").value || "").trim();
-      const p = (document.getElementById("pass-input").value || "").trim();
-      if (u === "admin" && p === "123") {
-        openApp();
-      } else {
-        document.getElementById("login-err").textContent = "بيانات الدخول غير صحيحة (admin / 123)";
+  try {
+    const res = await fetch(`${url}/rest/v1/branches?select=*`, {
+      headers: {
+        apikey: key,
+        Authorization: `Bearer ${key}`
       }
-      return false;
+    });
+
+    if (!res.ok) {
+      throw new Error(`HTTP ${res.status}`);
     }
 
-    function handleLoginSubmit(e) {
-      return handleLoginClick(e);
-    }
-
-    function handleLogout() {
-      document.getElementById("app-view").style.display = "none";
-      document.getElementById("login-view").style.display = "flex";
-    }
-
-    function syncSelects() {
-      const filterBr = document.getElementById("filter-branch");
-      const prevFilter = filterBr.value || "ALL";
-      filterBr.innerHTML =
-        `<option value="ALL">كل الفروع (${db.branches.length})</option>` +
-        db.branches.map(b => `<option value="${b}">${b}</option>`).join("");
-      filterBr.value = db.branches.includes(prevFilter) || prevFilter === "ALL" ? prevFilter : "ALL";
-
-      const branchOptions = db.branches.map(b => `<option value="${b}">${b}</option>`).join("");
-      document.getElementById("entry-branch").innerHTML = branchOptions;
-      document.getElementById("adv-branch").innerHTML = branchOptions;
-      document.getElementById("staff-branch").innerHTML = branchOptions;
-
-      document.getElementById("entry-client").innerHTML =
-        `<option value="">-- بدون عميل --</option>` +
-        db.clients.map(c => `<option value="${c.name}">${c.name}</option>`).join("");
-    }
-
-    function renderAll() {
-      syncSelects();
-      const br = document.getElementById("filter-branch").value;
-      const cur = document.getElementById("filter-currency").value;
-      document.querySelectorAll(".c-tag").forEach(e => { e.textContent = cur; });
-
-      const rows = db.txs.filter(t => (br === "ALL" || t.branch === br) && t.currency === cur);
-      const inc = rows.filter(t => t.type === "RECEIPT").reduce((s, t) => s + Number(t.amount), 0);
-      const exp = rows.filter(t => t.type === "PAYMENT").reduce((s, t) => s + Number(t.amount), 0);
-
-      document.getElementById("sum-in").textContent = inc.toLocaleString("en-US");
-      document.getElementById("sum-out").textContent = exp.toLocaleString("en-US");
-
-      document.getElementById("entry-list").innerHTML = rows.slice().reverse().map(t => `
-        <tr>
-          <td>${t.date}</td>
-          <td>${t.branch}</td>
-          <td><span class="${t.type === "RECEIPT" ? "badge-in" : "badge-out"}">${t.type === "RECEIPT" ? "سند قبض (+)" : "سند صرف (-)"}</span></td>
-          <td>${[t.client, t.note].filter(Boolean).join(" - ") || "-"}</td>
-          <td><strong>${Number(t.amount).toLocaleString("en-US")}</strong></td>
-        </tr>
-      `).join("") || `<tr><td colspan="5" style="text-align:center;color:var(--muted);">لا توجد عمليات مسجلة</td></tr>`;
-
-      document.getElementById("branch-count").textContent = db.branches.length;
-      document.getElementById("branch-list").innerHTML = db.branches.map((b, i) => `
-        <div class="item-row">
-          <div><strong>${b}</strong></div>
-          ${db.branches.length > 1 ? `<button type="button" class="btn-del" onclick="deleteBranch(${i})">حذف</button>` : ""}
-        </div>
-      `).join("");
-
-      document.getElementById("client-count").textContent = db.clients.length;
-      document.getElementById("client-list").innerHTML = db.clients.map((c, i) => `
-        <div class="item-row">
-          <div>
-            <div><strong>${c.name}</strong></div>
-            <div class="item-sub">${c.phone ? "هاتف: " + c.phone + " • " : ""}رصيد افتتاحي: ${Number(c.balance || 0).toLocaleString("en-US")} ${cur}</div>
-          </div>
-          <button type="button" class="btn-del" onclick="deleteClient(${i})">حذف</button>
-        </div>
-      `).join("") || `<p style="color:var(--muted);font-size:0.85rem;">لا يوجد عملاء مضافون بعد.</p>`;
-
-      document.getElementById("staff-count").textContent = db.staff.length;
-      document.getElementById("staff-list").innerHTML = db.staff.map((s, i) => `
-        <div class="item-row">
-          <div>
-            <div><strong>${s.name}</strong> — <span class="item-sub">${s.role}</span></div>
-            <div class="item-sub">${s.branch}${s.salary ? " • راتب: " + Number(s.salary).toLocaleString("en-US") : ""}</div>
-          </div>
-          <button type="button" class="btn-del" onclick="deleteStaff(${i})">حذف</button>
-        </div>
-      `).join("") || `<p style="color:var(--muted);font-size:0.85rem;">لا يوجد موظفون مضافون بعد.</p>`;
-
-      document.getElementById("adv-count").textContent = db.advances.length;
-      document.getElementById("adv-list").innerHTML = db.advances.map((a, i) => `
-        <div class="item-row">
-          <div>
-            <div><strong>${a.person}</strong> — <strong>${Number(a.amount).toLocaleString("en-US")} ${a.currency}</strong></div>
-            <div class="item-sub">${a.branch}${a.note ? " • " + a.note : ""} • ${a.date}</div>
-          </div>
-          <button type="button" class="btn-del" onclick="deleteAdvance(${i})">حذف</button>
-        </div>
-      `).join("") || `<p style="color:var(--muted);font-size:0.85rem;">لا توجد عهد مسجلة بعد.</p>`;
-
-      document.getElementById("report-summary").textContent =
-        `الفرع: ${br === "ALL" ? "كل الفروع" : br} | العملة: ${cur} | المقبوضات: ${inc.toLocaleString("en-US")} | المصروفات: ${exp.toLocaleString("en-US")} | الصافي: ${(inc - exp).toLocaleString("en-US")}`;
-    }
-
-    function deleteBranch(i) { db.branches.splice(i, 1); save(); renderAll(); }
-    function deleteClient(i) { db.clients.splice(i, 1); save(); renderAll(); }
-    function deleteStaff(i) { db.staff.splice(i, 1); save(); renderAll(); }
-    function deleteAdvance(i) { db.advances.splice(i, 1); save(); renderAll(); }
-
-    function addEntry(e) {
-      e.preventDefault();
-      const amt = parseFloat(document.getElementById("entry-amount").value);
-      if (!amt || amt <= 0) return false;
-      db.txs.push({
-        id: Date.now(),
-        date: new Date().toISOString().slice(0, 10),
-        branch: document.getElementById("entry-branch").value,
-        type: document.getElementById("entry-type").value,
-        client: document.getElementById("entry-client").value,
-        note: document.getElementById("entry-note").value.trim(),
-        amount: amt,
-        currency: document.getElementById("filter-currency").value
-      });
-      save();
-      document.getElementById("entry-amount").value = "";
-      document.getElementById("entry-note").value = "";
+    const remoteBranches = await res.json();
+    if (Array.isArray(remoteBranches) && remoteBranches.length > 0) {
+      db.branches = remoteBranches.map(b => ({
+        id: b.id || b.code || String(Math.random()),
+        code: b.code || b.id || "",
+        name: b.name || b.code || "فرع",
+        city: b.city || ""
+      }));
+      saveDB();
+      populateSelects();
       renderAll();
-      return false;
     }
 
-    function addClient(e) {
-      e.preventDefault();
-      const name = document.getElementById("client-name").value.trim();
-      if (!name) return false;
-      db.clients.push({
-        id: Date.now(),
-        name,
-        phone: document.getElementById("client-phone").value.trim(),
-        balance: parseFloat(document.getElementById("client-balance").value) || 0
-      });
-      save();
-      e.target.reset();
-      renderAll();
-      return false;
+    document.getElementById("sync-status").textContent = "متصل بقاعدة بيانات Supabase";
+    msgEl.style.color = "var(--green)";
+    msgEl.textContent = `نجح الاتصال والاختبار! عدد الفروع المتاحة في قاعدة البيانات: ${Array.isArray(remoteBranches) ? remoteBranches.length : 0}.`;
+    showToast("تم الاتصال والمزامنة بنجاح");
+  } catch (err) {
+    msgEl.style.color = "var(--red)";
+    msgEl.textContent = `تعذر الاتصال بـ Supabase (${err.message}). تأكد من الرابط ومفتاح anon public وتنفيذ سكربت الجداول والسياسات.`;
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  mountLogos();
+  renderQuickUsers();
+
+  document.getElementById("toggle-pass-btn").addEventListener("click", () => {
+    const inp = document.getElementById("pass-input");
+    const btn = document.getElementById("toggle-pass-btn");
+    if (inp.type === "password") {
+      inp.type = "text";
+      btn.textContent = "إخفاء";
+    } else {
+      inp.type = "password";
+      btn.textContent = "إظهار";
+    }
+  });
+
+  document.getElementById("login-form").addEventListener("submit", doLogin);
+  document.getElementById("reset-demo-btn").addEventListener("click", resetDemoData);
+  document.getElementById("exit-btn").addEventListener("click", doLogout);
+
+  document.getElementById("filter-branch").addEventListener("change", renderAll);
+  document.getElementById("filter-currency").addEventListener("change", renderAll);
+  document.getElementById("stmt-client").addEventListener("change", renderStatement);
+
+  document.querySelectorAll(".nav-item").forEach(btn => {
+    btn.addEventListener("click", () => switchSection(btn.dataset.sec));
+  });
+
+  document.getElementById("entry-form").addEventListener("submit", e => {
+    e.preventDefault();
+    const amount = parseFloat(document.getElementById("entry-amount").value);
+    if (!amount || amount <= 0) return showToast("أدخل مبلغاً صحيحاً");
+
+    const branchId = document.getElementById("entry-branch").value;
+    const type = document.getElementById("entry-type").value;
+    const clientId = document.getElementById("entry-client").value;
+    const currency = document.getElementById("filter-currency").value || "YER";
+    const note = (document.getElementById("entry-note").value || "").trim() || "قيد مالي";
+
+    db.txs.push({
+      id: "t_" + Date.now(),
+      date: new Date().toISOString().slice(0, 10),
+      branchId,
+      type,
+      clientId,
+      amount,
+      currency,
+      note
+    });
+
+    if (clientId) {
+      const cl = db.clients.find(c => c.id === clientId);
+      if (cl) {
+        cl.balance = Number(cl.balance || 0) + (type === "EXPENSE" ? amount : -amount);
+      }
     }
 
-    function addStaff(e) {
-      e.preventDefault();
-      const name = document.getElementById("staff-name").value.trim();
-      const role = document.getElementById("staff-role").value.trim();
-      if (!name || !role) return false;
-      db.staff.push({
-        id: Date.now(),
-        name,
-        role,
-        branch: document.getElementById("staff-branch").value,
-        salary: parseFloat(document.getElementById("staff-salary").value) || 0
-      });
-      save();
-      e.target.reset();
-      renderAll();
-      return false;
-    }
+    document.getElementById("entry-amount").value = "";
+    document.getElementById("entry-note").value = "";
+    saveDB();
+    renderAll();
+    showToast("تم حفظ العملية");
+  });
 
-    function addAdvance(e) {
-      e.preventDefault();
-      const person = document.getElementById("adv-person").value.trim();
-      const amount = parseFloat(document.getElementById("adv-amount").value);
-      if (!person || !amount || amount <= 0) return false;
-      db.advances.push({
-        id: Date.now(),
-        date: new Date().toISOString().slice(0, 10),
-        person,
-        branch: document.getElementById("adv-branch").value,
-        amount,
-        currency: document.getElementById("filter-currency").value,
-        note: document.getElementById("adv-note").value.trim()
-      });
-      save();
-      e.target.reset();
-      renderAll();
-      return false;
-    }
+  document.getElementById("advance-form").addEventListener("submit", e => {
+    e.preventDefault();
+    const person = (document.getElementById("adv-person").value || "").trim();
+    const amount = parseFloat(document.getElementById("adv-amount").value);
+    if (!person || !amount || amount <= 0) return showToast("أدخل بيانات العهدة بشكل صحيح");
 
-    function addBranch(e) {
-      e.preventDefault();
-      const bName = document.getElementById("new-branch-name").value.trim();
-      if (!bName || db.branches.includes(bName)) return false;
-      db.branches.push(bName);
-      save();
-      e.target.reset();
-      renderAll();
-      return false;
-    }
+    db.advances.push({
+      id: "a_" + Date.now(),
+      person,
+      branchId: document.getElementById("adv-branch").value,
+      amount,
+      currency: document.getElementById("filter-currency").value || "YER",
+      note: (document.getElementById("adv-note").value || "").trim() || "عهدة",
+      status: "مفتوحة"
+    });
 
-    function switchTab(btn) {
-      document.querySelectorAll(".nav-item").forEach(b => b.classList.remove("active"));
-      document.querySelectorAll(".section").forEach(s => s.classList.remove("active"));
-      btn.classList.add("active");
-      const target = document.getElementById(btn.dataset.sec);
-      if (target) target.classList.add("active");
-    }
-  </script>
+    document.getElementById("adv-person").value = "";
+    document.getElementById("adv-amount").value = "";
+    document.getElementById("adv-note").value = "";
+    saveDB();
+    renderAdvances();
+    showToast("تمت إضافة العهدة");
+  });
+
+  document.getElementById("branch-form").addEventListener("submit", e => {
+    e.preventDefault();
+    const name = (document.getElementById("new-branch-name").value || "").trim();
+    if (!name) return;
+    const rawCode = (document.getElementById("new-branch-code").value || "").trim().toUpperCase();
+    const city = (document.getElementById("new-branch-city").value || "").trim();
+    const code = rawCode || ("BR-" + Date.now().toString().slice(-4));
+    db.branches.push({ id: code, code, name, city });
+    document.getElementById("new-branch-code").value = "";
+    document.getElementById("new-branch-city").value = "";
+    document.getElementById("new-branch-name").value = "";
+    saveDB();
+    populateSelects();
+    renderAll();
+    showToast("تمت إضافة الفرع");
+  });
+
+  document.getElementById("client-form").addEventListener("submit", e => {
+    e.preventDefault();
+    const name = (document.getElementById("client-name").value || "").trim();
+    if (!name) return;
+    db.clients.push({
+      id: "c_" + Date.now(),
+      name,
+      phone: (document.getElementById("client-phone").value || "").trim(),
+      balance: parseFloat(document.getElementById("client-balance").value) || 0
+    });
+    document.getElementById("client-name").value = "";
+    document.getElementById("client-phone").value = "";
+    document.getElementById("client-balance").value = "";
+    saveDB();
+    populateSelects();
+    renderAll();
+    showToast("تمت إضافة العميل");
+  });
+
+  document.getElementById("staff-form").addEventListener("submit", e => {
+    e.preventDefault();
+    const name = (document.getElementById("staff-name").value || "").trim();
+    const role = (document.getElementById("staff-role").value || "").trim();
+    if (!name || !role) return;
+    db.staff.push({
+      id: "s_" + Date.now(),
+      name,
+      role,
+      branchId: document.getElementById("staff-branch").value,
+      salary: parseFloat(document.getElementById("staff-salary").value) || 0
+    });
+    document.getElementById("staff-name").value = "";
+    document.getElementById("staff-role").value = "";
+    document.getElementById("staff-salary").value = "";
+    saveDB();
+    renderStaff();
+    showToast("تمت إضافة الموظف");
+  });
+
+  document.getElementById("print-report-btn").addEventListener("click", () => window.print());
+  document.getElementById("save-sb-btn").addEventListener("click", saveSupabaseSettings);
+  document.getElementById("test-sb-btn").addEventListener("click", testAndSyncSupabase);
+});
+</script>
 </body>
-</html>
+  </html>
