@@ -18,10 +18,10 @@
       --line: #dde5f0;
       --green: #147a57;
       --red: #b91c1c;
-      --r-lg: 22px;
-      --r-md: 16px;
-      --r-sm: 12px;
-      --shadow: 0 10px 28px rgba(10, 31, 58, 0.08);
+      --r-lg: 20px;
+      --r-md: 15px;
+      --r-sm: 11px;
+      --shadow: 0 8px 24px rgba(10, 31, 58, 0.08);
     }
 
     * {
@@ -36,41 +36,40 @@
       background: var(--bg);
       color: var(--ink);
       line-height: 1.5;
-      padding-bottom: 88px;
+      padding-bottom: 86px;
       overflow-x: hidden;
     }
 
-    /* الشعار والهوية */
     .brand-lockup {
       display: flex;
       align-items: center;
-      gap: 13px;
+      gap: 12px;
     }
 
     .logo-medal {
-      width: 62px;
-      height: 62px;
+      width: 58px;
+      height: 58px;
       flex-shrink: 0;
-      border-radius: 18px;
+      border-radius: 16px;
       background: linear-gradient(155deg, #08182e, #183e6c);
       border: 1.5px solid var(--gold);
-      box-shadow: 0 8px 20px rgba(8, 24, 46, 0.25);
+      box-shadow: 0 8px 18px rgba(8, 24, 46, 0.25);
       display: grid;
       place-items: center;
     }
 
     .brand-h1 {
-      font-size: 1.03rem;
+      font-size: 1rem;
       font-weight: 900;
       line-height: 1.3;
     }
 
     .brand-pill {
       display: inline-block;
-      margin-top: 5px;
-      font-size: 0.74rem;
+      margin-top: 4px;
+      font-size: 0.72rem;
       font-weight: 800;
-      padding: 2px 10px;
+      padding: 2px 9px;
       border-radius: 999px;
       background: var(--gold-bg);
       color: #825b10;
@@ -96,66 +95,61 @@
       background: var(--surface);
       border-radius: var(--r-lg);
       border: 1px solid var(--line);
-      padding: 24px 20px;
+      padding: 22px 18px;
       box-shadow: 0 18px 40px rgba(10, 31, 58, 0.16);
     }
 
     .login-brand {
-      padding-bottom: 16px;
-      margin-bottom: 18px;
+      padding-bottom: 14px;
+      margin-bottom: 16px;
       border-bottom: 1px solid var(--line);
     }
 
-    .login-brand .brand-h1 {
-      color: var(--navy);
-    }
+    .login-brand .brand-h1 { color: var(--navy); }
 
     .login-meta {
       margin-top: 10px;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: var(--muted);
       background: var(--bg);
       padding: 8px 12px;
       border-radius: var(--r-sm);
     }
 
-    .form-group {
-      margin-bottom: 14px;
-    }
+    .form-group { margin-bottom: 12px; }
 
     label {
       display: block;
-      font-size: 0.83rem;
+      font-size: 0.8rem;
       font-weight: 800;
       color: var(--navy);
-      margin-bottom: 6px;
+      margin-bottom: 5px;
     }
 
     input, select {
       width: 100%;
-      min-height: 46px;
-      padding: 10px 13px;
+      min-height: 44px;
+      padding: 9px 12px;
       border-radius: var(--r-sm);
       border: 1.5px solid var(--line);
       background: var(--surface);
       color: var(--ink);
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       font-family: inherit;
     }
 
     input:focus, select:focus {
       outline: none;
       border-color: var(--gold);
-      box-shadow: 0 0 0 3px rgba(200, 150, 46, 0.16);
     }
 
     .btn {
       width: 100%;
-      min-height: 48px;
-      padding: 11px 16px;
+      min-height: 44px;
+      padding: 10px 14px;
       border: none;
-      border-radius: 14px;
-      font-size: 0.95rem;
+      border-radius: 12px;
+      font-size: 0.9rem;
       font-weight: 800;
       font-family: inherit;
       cursor: pointer;
@@ -168,13 +162,27 @@
     .btn-primary {
       background: linear-gradient(135deg, var(--navy), var(--navy-soft));
       color: #fff;
-      box-shadow: 0 8px 18px rgba(10, 31, 58, 0.22);
     }
 
     .btn-save {
       background: linear-gradient(135deg, #116b4c, var(--green));
       color: #fff;
-      box-shadow: 0 8px 18px rgba(20, 122, 87, 0.22);
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #a87919, var(--gold));
+      color: #fff;
+    }
+
+    .btn-del {
+      width: auto;
+      min-height: 32px;
+      padding: 4px 9px;
+      font-size: 0.74rem;
+      border-radius: 8px;
+      background: #fdecec;
+      color: var(--red);
+      border: 1px solid #f6caca;
     }
 
     .btn-exit {
@@ -190,10 +198,10 @@
 
     .login-err {
       color: var(--red);
-      font-size: 0.83rem;
+      font-size: 0.82rem;
       font-weight: 700;
-      min-height: 20px;
-      margin-bottom: 10px;
+      min-height: 18px;
+      margin-bottom: 8px;
     }
 
     /* التطبيق الرئيسي */
@@ -202,9 +210,9 @@
     .app-top {
       background: linear-gradient(150deg, #08182e 0%, var(--navy) 55%, var(--navy-soft) 100%);
       color: #fff;
-      padding: 16px 16px 20px;
-      border-bottom-left-radius: 24px;
-      border-bottom-right-radius: 24px;
+      padding: 15px 15px 18px;
+      border-bottom-left-radius: 22px;
+      border-bottom-right-radius: 22px;
       border-bottom: 3px solid var(--gold);
       box-shadow: var(--shadow);
     }
@@ -213,14 +221,14 @@
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
-      gap: 10px;
-      margin-bottom: 14px;
+      gap: 8px;
+      margin-bottom: 12px;
     }
 
     .app-sub {
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       color: #d7e3f2;
-      margin-top: 3px;
+      margin-top: 2px;
     }
 
     .selectors {
@@ -230,59 +238,46 @@
     }
 
     .selectors select {
-      min-height: 42px;
-      font-size: 0.84rem;
+      min-height: 40px;
+      font-size: 0.82rem;
       font-weight: 800;
-      border-radius: 12px;
     }
 
     .content {
-      max-width: 820px;
+      max-width: 860px;
       margin: 0 auto;
-      padding: 16px;
+      padding: 14px;
     }
 
     .summary-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-bottom: 16px;
+      gap: 10px;
+      margin-bottom: 14px;
     }
 
     .summary-box {
       background: var(--surface);
       border: 1px solid var(--line);
       border-radius: var(--r-md);
-      padding: 14px;
+      padding: 12px;
       box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
+      border-top: 4px solid var(--navy);
     }
 
-    .summary-box::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      left: 0;
-      height: 4px;
-      background: var(--navy);
-    }
-
-    .summary-box.in::before { background: var(--green); }
+    .summary-box.in { border-top-color: var(--green); }
 
     .summary-lbl {
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       color: var(--muted);
       font-weight: 700;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .summary-val {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       font-weight: 900;
       color: var(--navy);
-      letter-spacing: -0.3px;
     }
 
     .summary-box.in .summary-val { color: var(--green); }
@@ -291,17 +286,17 @@
       background: var(--surface);
       border: 1px solid var(--line);
       border-radius: var(--r-lg);
-      padding: 16px;
-      margin-bottom: 16px;
+      padding: 14px;
+      margin-bottom: 14px;
       box-shadow: var(--shadow);
     }
 
     .card-head {
-      font-size: 0.96rem;
+      font-size: 0.94rem;
       font-weight: 900;
       color: var(--navy);
-      padding-bottom: 10px;
-      margin-bottom: 14px;
+      padding-bottom: 8px;
+      margin-bottom: 12px;
       border-bottom: 1px solid var(--line);
       display: flex;
       align-items: center;
@@ -310,7 +305,7 @@
 
     .card-head::after {
       content: "";
-      width: 24px;
+      width: 22px;
       height: 4px;
       border-radius: 99px;
       background: var(--gold);
@@ -319,7 +314,7 @@
     .fields-2 {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px;
+      gap: 10px;
     }
 
     .full { grid-column: 1 / -1; }
@@ -333,12 +328,12 @@
     table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 0.83rem;
-      min-width: 480px;
+      font-size: 0.8rem;
+      min-width: 460px;
     }
 
     th, td {
-      padding: 11px 10px;
+      padding: 9px 8px;
       text-align: right;
       border-bottom: 1px solid var(--line);
     }
@@ -353,9 +348,9 @@
 
     .badge-in {
       display: inline-block;
-      padding: 2px 8px;
+      padding: 2px 7px;
       border-radius: 999px;
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 800;
       background: #e6f6ef;
       color: var(--green);
@@ -363,30 +358,47 @@
 
     .badge-out {
       display: inline-block;
-      padding: 2px 8px;
+      padding: 2px 7px;
       border-radius: 999px;
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 800;
       background: #fdecec;
       color: var(--red);
     }
 
+    .item-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      margin-bottom: 8px;
+      background: #fafbfd;
+      font-size: 0.85rem;
+    }
+
+    .item-sub {
+      font-size: 0.76rem;
+      color: var(--muted);
+    }
+
     .section { display: none; }
     .section.active { display: block; }
 
-    /* شريط التنقل السفلي للهاتف */
     .app-nav {
       position: fixed;
       bottom: 0;
       left: 0;
       right: 0;
-      background: rgba(255, 255, 255, 0.96);
+      background: rgba(255, 255, 255, 0.97);
       backdrop-filter: blur(10px);
       border-top: 1px solid var(--line);
       box-shadow: 0 -6px 20px rgba(10, 31, 58, 0.08);
       display: grid;
       grid-template-columns: repeat(6, 1fr);
-      padding: 4px 4px calc(4px + env(safe-area-inset-bottom));
+      padding: 4px 3px calc(4px + env(safe-area-inset-bottom));
       z-index: 40;
     }
 
@@ -394,8 +406,8 @@
       background: none;
       border: none;
       padding: 8px 2px;
-      border-radius: 12px;
-      font-size: 0.72rem;
+      border-radius: 10px;
+      font-size: 0.7rem;
       font-weight: 800;
       font-family: inherit;
       color: var(--muted);
@@ -417,7 +429,7 @@
       <div class="login-brand">
         <div class="brand-lockup">
           <div class="logo-medal" aria-hidden="true">
-            <svg width="44" height="44" viewBox="0 0 64 64" fill="none">
+            <svg width="42" height="42" viewBox="0 0 64 64" fill="none">
               <path d="M32 5L53 13.5V30.5C53 44.2 44.1 54.6 32 58.5C19.9 54.6 11 44.2 11 30.5V13.5L32 5Z" fill="#0f2b4d" stroke="#e4b54c" stroke-width="2.6"/>
               <path d="M32 16V43M21 43H43M17 23H47" stroke="#f8d781" stroke-width="2.5" stroke-linecap="round"/>
               <path d="M17 23L12.5 33H21.5L17 23ZM47 23L42.5 33H51.5L47 23Z" fill="#e4b54c"/>
@@ -428,17 +440,17 @@
             <span class="brand-pill">النظام المحاسبي • صنعاء – شارع الخمسين</span>
           </div>
         </div>
-        <div class="login-meta">إدارة 8 فروع • 9 موظفين • 29 عميلاً</div>
+        <div class="login-meta">إدارة الفروع • العهد • العملاء • الموظفون • التقارير</div>
       </div>
 
       <form id="login-form">
         <div class="form-group">
           <label for="user-input">اسم المستخدم</label>
-          <input id="user-input" type="text" value="admin" autocomplete="username" required />
+          <input id="user-input" type="text" value="admin" required />
         </div>
         <div class="form-group">
           <label for="pass-input">كلمة المرور</label>
-          <input id="pass-input" type="password" value="123" autocomplete="current-password" required />
+          <input id="pass-input" type="password" value="123" required />
         </div>
         <div id="login-err" class="login-err"></div>
         <button type="submit" class="btn btn-primary">تسجيل الدخول</button>
@@ -446,13 +458,13 @@
     </div>
   </section>
 
-  <!-- الواجهة الرئيسية -->
+  <!-- التطبيق الرئيسي -->
   <section id="app-view">
     <header class="app-top">
       <div class="app-top-bar">
         <div class="brand-lockup">
           <div class="logo-medal" aria-hidden="true">
-            <svg width="44" height="44" viewBox="0 0 64 64" fill="none">
+            <svg width="42" height="42" viewBox="0 0 64 64" fill="none">
               <path d="M32 5L53 13.5V30.5C53 44.2 44.1 54.6 32 58.5C19.9 54.6 11 44.2 11 30.5V13.5L32 5Z" fill="#0f2b4d" stroke="#e4b54c" stroke-width="2.6"/>
               <path d="M32 16V43M21 43H43M17 23H47" stroke="#f8d781" stroke-width="2.5" stroke-linecap="round"/>
               <path d="M17 23L12.5 33H21.5L17 23ZM47 23L42.5 33H51.5L47 23Z" fill="#e4b54c"/>
@@ -477,6 +489,7 @@
     </header>
 
     <main class="content">
+      <!-- الرئيسية -->
       <div id="sec-home" class="section active">
         <div class="summary-row">
           <div class="summary-box in">
@@ -540,38 +553,128 @@
         </div>
       </div>
 
+      <!-- العهد -->
       <div id="sec-advances" class="section">
         <div class="card">
-          <div class="card-head">العهد المالية</div>
-          <p style="color:var(--muted);font-size:0.9rem;">سجل عهد الفروع والموظفين في مكتب أحمد ماهر للتخليص والتوكيلات التجارية.</p>
+          <div class="card-head">إضافة عهدة جديدة</div>
+          <form id="advance-form" class="fields-2">
+            <div class="form-group">
+              <label for="adv-person">الموظف / المستلم</label>
+              <input id="adv-person" type="text" placeholder="اسم الموظف" required />
+            </div>
+            <div class="form-group">
+              <label for="adv-branch">الفرع</label>
+              <select id="adv-branch"></select>
+            </div>
+            <div class="form-group">
+              <label for="adv-amount">مبلغ العهدة</label>
+              <input id="adv-amount" type="number" step="0.01" inputmode="decimal" placeholder="0.00" required />
+            </div>
+            <div class="form-group">
+              <label for="adv-note">الغرض / البيان</label>
+              <input id="adv-note" type="text" placeholder="مصاريف جمركية / نقل" />
+            </div>
+            <div class="full">
+              <button type="submit" class="btn btn-gold">إضافة العهدة</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="card">
+          <div class="card-head">سجل العهد (<span id="adv-count">0</span>)</div>
+          <div id="adv-list"></div>
         </div>
       </div>
 
+      <!-- الفروع -->
       <div id="sec-branches" class="section">
         <div class="card">
-          <div class="card-head">الفروع (8 فروع)</div>
-          <ul id="branch-items" style="padding-right:18px;font-size:0.92rem;"></ul>
+          <div class="card-head">إضافة فرع جديد</div>
+          <form id="branch-form" class="fields-2">
+            <div class="form-group full">
+              <label for="new-branch-name">اسم الفرع</label>
+              <input id="new-branch-name" type="text" placeholder="مثال: فرع ميناء الحديدة" required />
+            </div>
+            <div class="full">
+              <button type="submit" class="btn btn-primary">إضافة الفرع</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="card">
+          <div class="card-head">الفروع (<span id="branch-count">0</span>)</div>
+          <div id="branch-list"></div>
         </div>
       </div>
 
+      <!-- العملاء -->
       <div id="sec-clients" class="section">
         <div class="card">
-          <div class="card-head">العملاء (29 عميلاً)</div>
-          <p style="color:var(--muted);font-size:0.9rem;">إجمالي العملاء المسجلين: 29 عميلاً.</p>
+          <div class="card-head">إضافة عميل جديد</div>
+          <form id="client-form" class="fields-2">
+            <div class="form-group">
+              <label for="client-name">اسم العميل</label>
+              <input id="client-name" type="text" placeholder="اسم العميل أو الشركة" required />
+            </div>
+            <div class="form-group">
+              <label for="client-phone">رقم الهاتف</label>
+              <input id="client-phone" type="tel" placeholder="77xxxxxxx" />
+            </div>
+            <div class="form-group full">
+              <label for="client-balance">الرصيد الافتتاحي</label>
+              <input id="client-balance" type="number" step="0.01" inputmode="decimal" placeholder="0.00" />
+            </div>
+            <div class="full">
+              <button type="submit" class="btn btn-save">إضافة العميل</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="card">
+          <div class="card-head">قائمة العملاء (<span id="client-count">0</span>)</div>
+          <div id="client-list"></div>
         </div>
       </div>
 
+      <!-- الموظفون -->
       <div id="sec-staff" class="section">
         <div class="card">
-          <div class="card-head">الموظفون (9 موظفين)</div>
-          <p style="color:var(--muted);font-size:0.9rem;">إجمالي الموظفين المسجلين: 9 موظفين.</p>
+          <div class="card-head">إضافة موظف جديد</div>
+          <form id="staff-form" class="fields-2">
+            <div class="form-group">
+              <label for="staff-name">اسم الموظف</label>
+              <input id="staff-name" type="text" placeholder="الاسم الثلاثي" required />
+            </div>
+            <div class="form-group">
+              <label for="staff-role">المسمى الوظيفي</label>
+              <input id="staff-role" type="text" placeholder="مخلص جمركي / محاسب" required />
+            </div>
+            <div class="form-group">
+              <label for="staff-branch">الفرع</label>
+              <select id="staff-branch"></select>
+            </div>
+            <div class="form-group">
+              <label for="staff-salary">الراتب</label>
+              <input id="staff-salary" type="number" step="0.01" inputmode="decimal" placeholder="0.00" />
+            </div>
+            <div class="full">
+              <button type="submit" class="btn btn-primary">إضافة الموظف</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="card">
+          <div class="card-head">قائمة الموظفين (<span id="staff-count">0</span>)</div>
+          <div id="staff-list"></div>
         </div>
       </div>
 
+      <!-- التقارير -->
       <div id="sec-reports" class="section">
         <div class="card">
-          <div class="card-head">التقارير</div>
-          <button type="button" class="btn btn-primary" onclick="window.print()">طباعة / حفظ PDF</button>
+          <div class="card-head">ملخص التقرير المالي</div>
+          <p id="report-summary" style="font-size:0.9rem;color:var(--ink);margin-bottom:14px;"></p>
+          <button type="button" class="btn btn-primary" onclick="window.print()">طباعة / تصدير PDF</button>
         </div>
       </div>
     </main>
@@ -587,7 +690,7 @@
   </section>
 
   <script>
-    const BRANCHES = [
+    const DEFAULT_BRANCHES = [
       "الإدارة العامة – شارع الخمسين",
       "فرع جمرك ذمار",
       "فرع عدن",
@@ -598,12 +701,24 @@
       "فرع المكلا"
     ];
 
-    const CLIENTS = Array.from({ length: 29 }, (_, i) => `عميل رقم ${i + 1}`);
-    const STORE_KEY = "ahmad_maher_mobile_v1";
+    const DEFAULT_CLIENTS = [
+      { id: 1, name: "مؤسسة الأسعد التجارية", phone: "", balance: 0 }
+    ];
 
-    let state = JSON.parse(localStorage.getItem(STORE_KEY) || "null") || {
+    const DEFAULT_STAFF = [
+      { id: 1, name: "مهندس هشام ماهر", role: "عمليات وتخليص جمركي", branch: "الإدارة العامة – شارع الخمسين", salary: 0 }
+    ];
+
+    const STORE_KEY = "ahmad_maher_full_v1";
+
+    let db = JSON.parse(localStorage.getItem(STORE_KEY) || "null") || {
+      branches: DEFAULT_BRANCHES.slice(),
+      clients: DEFAULT_CLIENTS.slice(),
+      staff: DEFAULT_STAFF.slice(),
+      advances: [],
       txs: [
         {
+          id: 1,
           date: "2026-11-21",
           branch: "فرع جمرك ذمار",
           type: "RECEIPT",
@@ -616,31 +731,34 @@
     };
 
     function save() {
-      localStorage.setItem(STORE_KEY, JSON.stringify(state));
+      localStorage.setItem(STORE_KEY, JSON.stringify(db));
     }
 
-    function initOptions() {
+    function syncSelects() {
+      const prevFilter = document.getElementById("filter-branch").value || "ALL";
       document.getElementById("filter-branch").innerHTML =
-        `<option value="ALL">كل الفروع (8)</option>` +
-        BRANCHES.map(b => `<option value="${b}">${b}</option>`).join("");
+        `<option value="ALL">كل الفروع (${db.branches.length})</option>` +
+        db.branches.map(b => `<option value="${b}">${b}</option>`).join("");
+      document.getElementById("filter-branch").value =
+        db.branches.includes(prevFilter) || prevFilter === "ALL" ? prevFilter : "ALL";
 
-      document.getElementById("entry-branch").innerHTML =
-        BRANCHES.map(b => `<option value="${b}">${b}</option>`).join("");
+      const branchOptions = db.branches.map(b => `<option value="${b}">${b}</option>`).join("");
+      document.getElementById("entry-branch").innerHTML = branchOptions;
+      document.getElementById("adv-branch").innerHTML = branchOptions;
+      document.getElementById("staff-branch").innerHTML = branchOptions;
 
       document.getElementById("entry-client").innerHTML =
         `<option value="">-- بدون عميل --</option>` +
-        CLIENTS.map(c => `<option value="${c}">${c}</option>`).join("");
-
-      document.getElementById("branch-items").innerHTML =
-        BRANCHES.map(b => `<li style="margin-bottom:8px;">${b}</li>`).join("");
+        db.clients.map(c => `<option value="${c.name}">${c.name}</option>`).join("");
     }
 
-    function render() {
+    function renderAll() {
+      syncSelects();
       const br = document.getElementById("filter-branch").value;
       const cur = document.getElementById("filter-currency").value;
       document.querySelectorAll(".c-tag").forEach(e => e.textContent = cur);
 
-      const rows = state.txs.filter(t => (br === "ALL" || t.branch === br) && t.currency === cur);
+      const rows = db.txs.filter(t => (br === "ALL" || t.branch === br) && t.currency === cur);
       const inc = rows.filter(t => t.type === "RECEIPT").reduce((s, t) => s + Number(t.amount), 0);
       const exp = rows.filter(t => t.type === "PAYMENT").reduce((s, t) => s + Number(t.amount), 0);
 
@@ -656,7 +774,61 @@
           <td><strong>${Number(t.amount).toLocaleString("en-US")}</strong></td>
         </tr>
       `).join("") || `<tr><td colspan="5" style="text-align:center;color:var(--muted);">لا توجد عمليات مسجلة</td></tr>`;
+
+      // الفروع
+      document.getElementById("branch-count").textContent = db.branches.length;
+      document.getElementById("branch-list").innerHTML = db.branches.map((b, i) => `
+        <div class="item-row">
+          <div><strong>${b}</strong></div>
+          ${db.branches.length > 1 ? `<button type="button" class="btn-del" onclick="deleteBranch(${i})">حذف</button>` : ""}
+        </div>
+      `).join("");
+
+      // العملاء
+      document.getElementById("client-count").textContent = db.clients.length;
+      document.getElementById("client-list").innerHTML = db.clients.map((c, i) => `
+        <div class="item-row">
+          <div>
+            <div><strong>${c.name}</strong></div>
+            <div class="item-sub">${c.phone ? "هاتف: " + c.phone + " • " : ""}رصيد افتتاحي: ${Number(c.balance || 0).toLocaleString("en-US")} ${cur}</div>
+          </div>
+          <button type="button" class="btn-del" onclick="deleteClient(${i})">حذف</button>
+        </div>
+      `).join("") || `<p style="color:var(--muted);font-size:0.85rem;">لا يوجد عملاء مضافون بعد.</p>`;
+
+      // الموظفون
+      document.getElementById("staff-count").textContent = db.staff.length;
+      document.getElementById("staff-list").innerHTML = db.staff.map((s, i) => `
+        <div class="item-row">
+          <div>
+            <div><strong>${s.name}</strong> — <span class="item-sub">${s.role}</span></div>
+            <div class="item-sub">${s.branch}${s.salary ? " • راتب: " + Number(s.salary).toLocaleString("en-US") : ""}</div>
+          </div>
+          <button type="button" class="btn-del" onclick="deleteStaff(${i})">حذف</button>
+        </div>
+      `).join("") || `<p style="color:var(--muted);font-size:0.85rem;">لا يوجد موظفون مضافون بعد.</p>`;
+
+      // العهد
+      document.getElementById("adv-count").textContent = db.advances.length;
+      document.getElementById("adv-list").innerHTML = db.advances.map((a, i) => `
+        <div class="item-row">
+          <div>
+            <div><strong>${a.person}</strong> — <strong>${Number(a.amount).toLocaleString("en-US")} ${a.currency}</strong></div>
+            <div class="item-sub">${a.branch}${a.note ? " • " + a.note : ""} • ${a.date}</div>
+          </div>
+          <button type="button" class="btn-del" onclick="deleteAdvance(${i})">حذف</button>
+        </div>
+      `).join("") || `<p style="color:var(--muted);font-size:0.85rem;">لا توجد عهد مسجلة بعد.</p>`;
+
+      // التقرير
+      document.getElementById("report-summary").textContent =
+        `الفرع: ${br === "ALL" ? "كل الفروع" : br} | العملة: ${cur} | المقبوضات: ${inc.toLocaleString("en-US")} | المصروفات: ${exp.toLocaleString("en-US")} | الصافي: ${(inc - exp).toLocaleString("en-US")}`;
     }
+
+    window.deleteBranch = i => { db.branches.splice(i, 1); save(); renderAll(); };
+    window.deleteClient = i => { db.clients.splice(i, 1); save(); renderAll(); };
+    window.deleteStaff = i => { db.staff.splice(i, 1); save(); renderAll(); };
+    window.deleteAdvance = i => { db.advances.splice(i, 1); save(); renderAll(); };
 
     document.getElementById("login-form").addEventListener("submit", e => {
       e.preventDefault();
@@ -666,10 +838,9 @@
         document.getElementById("login-err").textContent = "";
         document.getElementById("login-view").style.display = "none";
         document.getElementById("app-view").style.display = "block";
-        initOptions();
-        render();
+        renderAll();
       } else {
-        document.getElementById("login-err").textContent = "اسم المستخدم أو كلمة المرور غير صحيحة (admin / 123)";
+        document.getElementById("login-err").textContent = "بيانات الدخول غير صحيحة (admin / 123)";
       }
     });
 
@@ -678,15 +849,15 @@
       document.getElementById("login-view").style.display = "flex";
     });
 
-    document.getElementById("filter-branch").addEventListener("change", render);
-    document.getElementById("filter-currency").addEventListener("change", render);
+    document.getElementById("filter-branch").addEventListener("change", renderAll);
+    document.getElementById("filter-currency").addEventListener("change", renderAll);
 
     document.getElementById("entry-form").addEventListener("submit", e => {
       e.preventDefault();
       const amt = parseFloat(document.getElementById("entry-amount").value);
       if (!amt || amt <= 0) return;
-
-      state.txs.push({
+      db.txs.push({
+        id: Date.now(),
         date: new Date().toISOString().slice(0, 10),
         branch: document.getElementById("entry-branch").value,
         type: document.getElementById("entry-type").value,
@@ -698,7 +869,68 @@
       save();
       document.getElementById("entry-amount").value = "";
       document.getElementById("entry-note").value = "";
-      render();
+      renderAll();
+    });
+
+    document.getElementById("client-form").addEventListener("submit", e => {
+      e.preventDefault();
+      const name = document.getElementById("client-name").value.trim();
+      if (!name) return;
+      db.clients.push({
+        id: Date.now(),
+        name,
+        phone: document.getElementById("client-phone").value.trim(),
+        balance: parseFloat(document.getElementById("client-balance").value) || 0
+      });
+      save();
+      e.target.reset();
+      renderAll();
+    });
+
+    document.getElementById("staff-form").addEventListener("submit", e => {
+      e.preventDefault();
+      const name = document.getElementById("staff-name").value.trim();
+      const role = document.getElementById("staff-role").value.trim();
+      if (!name || !role) return;
+      db.staff.push({
+        id: Date.now(),
+        name,
+        role,
+        branch: document.getElementById("staff-branch").value,
+        salary: parseFloat(document.getElementById("staff-salary").value) || 0
+      });
+      save();
+      e.target.reset();
+      renderAll();
+    });
+
+    document.getElementById("advance-form").addEventListener("submit", e => {
+      e.preventDefault();
+      const person = document.getElementById("adv-person").value.trim();
+      const amount = parseFloat(document.getElementById("adv-amount").value);
+      if (!person || !amount || amount <= 0) return;
+      db.advances.push({
+        id: Date.now(),
+        date: new Date().toISOString().slice(0, 10),
+        person,
+        branch: document.getElementById("adv-branch").value,
+        amount,
+        currency: document.getElementById("filter-currency").value,
+        note: document.getElementById("adv-note").value.trim()
+      });
+      save();
+      e.target.reset();
+      renderAll();
+    });
+
+    document.getElementById("branch-form").addEventListener("submit", e => {
+      e.preventDefault();
+      const bName = document.getElementById("new-branch-name").value.trim();
+      if (!bName || db.branches.includes(bName)) return;
+      db.branches.push(bName);
+      save();
+      e.target.reset();
+      renderAll();
     });
 
     document.querySelectorAll(".nav-item").forEach(btn => {
