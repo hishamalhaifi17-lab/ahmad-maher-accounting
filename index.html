@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>مكتب أحمد ماهر للتخليص والتوكيلات التجارية</title>
+  <style>
+    :root {
+      --primary: #144a9c;
+      --primary-dark: #0c316b;
+      --primary-light: #e8f0fc;
+      --accent: #0f766e;
+      --danger: #b91c1c;
+      --bg: #f3f6fb;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --border: #dbe3ef;
+      --radius: 14px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Tahoma, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    button, input, select { font-family: inherit; }
+
+    .hidden { display: none !important; }
+
+    .login-screen {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      background: linear-gradient(160deg, #0c316b 0%, #144a9c 60%, #1e60c4 100%);
+    }
+
+    .login-card {
+      width: 100%;
+      max-width: 420px;
+      background: var(--card);
+      border-radius: 20px;
+      padding: 22px 18px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    .brand-box {
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 14px;
+      margin-bottom: 16px;
+    }
+
+    .brand-badge {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      font-weight: bold;
+      font-size: 17px;
+      padding: 7px 16px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+    }
+
+    .brand-title {
+      margin: 0;
+      font-size: 16px;
+      font-weight: bold;
+      color: var(--primary-dark);
+    }
+
+    .brand-sub {
+      margin: 4px 0 0;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .field { margin-bottom: 12px; }
+
+    .field label {
+      display: block;
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .field input, .field select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-size: 14px;
+      background: #fff;
+    }
+
+    .pass-row { display: flex; gap: 6px; }
+    .pass-row input { flex: 1; }
+
+    .btn {
+      border: none;
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 13px;
+      font-weight: bold;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      width: 100%;
+      padding: 12px;
+      font-size: 14px;
+    }
+
+    .btn-secondary {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+    }
+
+    .btn-success {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-danger {
+      background: #fee2e2;
+      color: var(--danger);
+    }
+
+    .btn-sm { padding: 6px 10px; font-size: 11px; border-radius: 8px; }
+
+    .alert-error {
+      background: #fee2e2;
+      color: var(--danger);
+      border: 1px solid #fecaca;
+      padding: 9px 12px;
+      border-radius: 10px;
+      font-size: 12px;
+      margin-bottom: 12px;
+      font-weight: bold;
+    }
+
+    .quick-users {
+      margin-top: 14px;
+      border-top: 1px dashed var(--border);
+      padding-top: 12px;
+    }
+
+    .quick-users-title {
+      font-size: 11px;
+      font-weight: bold;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 6px;
+    }
+
+    .quick-btn {
+      text-align: right;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 6px 8px;
+      font-size: 11px;
+      cursor: pointer;
+    }
+
+    .quick-btn strong { display: block; color: var(--primary-dark); }
+    .quick-btn span { color: var(--muted); font-size: 10px; }
+
+    .app-shell { padding-bottom: 74px; }
+
+    .top-bar {
+      background: var(--primary);
+      color: #fff;
+      padding: 12px 14px;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .top-bar-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .top-brand { font-size: 14px; font-weight: bold; }
+    .top-sub { font-size: 11px; opacity: 0.9; }
+
+    .filter-bar {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .filter-bar select {
+      flex: 1;
+      padding: 7px 10px;
+      border-radius: 9px;
+      border: none;
+      font-size: 12px;
+      font-weight: bold;
+      background: #fff;
+      color: var(--primary-dark);
+    }
+
+    .container {
+      padding: 12px;
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .stat-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px;
+    }
+
+    .stat-label { font-size: 11px; color: var(--muted); }
+    .stat-value { font-size: 16px; font-weight: bold; margin-top: 4px; color: var(--primary-dark); }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px;
+      margin-bottom: 12px;
+    }
+
+    .card-title {
+      margin: 0 0 10px;
+      font-size: 14px;
+      font-weight: bold;
+      color: var(--primary-dark);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 10px;
+    }
+
+    .table-wrap { overflow-x: auto; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+
+    th, td {
+      border-bottom: 1px solid var(--border);
+      padding: 8px 6px;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    th { background: #f8fafc; color: var(--primary-dark); }
+
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #fff;
+      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      z-index: 25;
+    }
+
+    .nav-btn {
+      border: none;
+      background: none;
+      padding: 9px 2px;
+      font-size: 10px;
+      font-weight: bold;
+      color: var(--muted);
+      cursor: pointer;
+    }
+
+    .nav-btn.active {
+      color: var(--primary);
+      background: var(--primary-light);
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 68px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #0f172a;
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 12px;
+      z-index: 50;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="loginScreen" class="login-screen">
+    <div class="login-card">
+      <div class="brand-box">
+        <div class="brand-badge">AHMAD MAHER</div>
+        <h1 class="brand-title">مكتب أحمد ماهر للتخليص والتوكيلات التجارية</h1>
+        <p class="brand-sub">الفرع الرئيسي: صنعاء – شارع الخمسين | نظام الفروع والمحاسبة</p>
+      </div>
+
+      <div id="loginError" class="alert-error hidden"></div>
+
+      <div class="field">
+        <label for="loginUsername">اسم المستخدم</label>
+        <input id="loginUsername" type="text" value="admin" placeholder="أدخل اسم المستخدم" />
+      </div>
+
+      <div class="field">
+        <label for="loginPassword">كلمة المرور</label>
+        <div class="pass-row">
+          <input id="loginPassword" type="password" value="123" placeholder="أدخل كلمة المرور" />
+          <button type="button" class="btn btn-secondary btn-sm" onclick="togglePass()">إظهار</button>
+        </div>
+      </div>
+
+      <button type="button" class="btn btn-primary" onclick="doLogin()">تسجيل الدخول إلى النظام</button>
+
+      <div style="display:flex; gap:8px; margin-top:10px;">
+        <button type="button" class="btn btn-secondary btn-sm" style="flex:1" onclick="resetDemoData()">إعادة ضبط البيانات</button>
+      </div>
+
+      <div class="quick-users">
+        <div class="quick-users-title">دخول سريع للتجربة:</div>
+        <div id="quickUsersBox" class="quick-grid"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="appShell" class="app-shell hidden">
+    <header class="top-bar">
+      <div class="top-bar-row">
+        <div>
+          <div id="userBanner" class="top-brand">مكتب أحمد ماهر</div>
+          <div class="top-sub">الفرع الرئيسي: صنعاء – شارع الخمسين</div>
+        </div>
+        <button type="button" class="btn btn-danger btn-sm" onclick="doLogout()">خروج</button>
+      </div>
+      <div class="filter-bar">
+        <select id="branchFilter" onchange="renderAll()">
+          <option value="ALL">كل الفروع</option>
+        </select>
+        <select id="currencyFilter" onchange="renderAll()">
+          <option value="YER">ريال يمني (YER)</option>
+          <option value="USD">دولار أمريكي (USD)</option>
+          <option value="SAR">ريال سعودي (SAR)</option>
+        </select>
+      </div>
+    </header>
+
+    <main class="container">
+      <section id="tab-home" class="tab-panel">
+        <div class="stats-grid" id="statsBox"></div>
+        <div class="card">
+          <h2 class="card-title">إضافة عملية مالية سريعة</h2>
+          <div class="form-grid">
+            <div class="field">
+              <label>الفرع</label>
+              <select id="txBranch"></select>
+            </div>
+            <div class="field">
+              <label>النوع</label>
+              <select id="txType">
+                <option value="RECEIPT">سند قبض (+)</option>
+                <option value="EXPENSE">مصروف (-)</option>
+                <option value="INCOME">إيراد تخليص (+)</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>العميل</label>
+              <select id="txClient"></select>
+            </div>
+            <div class="field">
+              <label>المبلغ</label>
+              <input id="txAmount" type="number" step="0.01" placeholder="0.00" />
+            </div>
+            <div class="field">
+              <label>البيان</label>
+              <input id="txDesc" type="text" placeholder="رقم بيان / ملاحظة" />
+            </div>
+          </div>
+          <button type="button" class="btn btn-success" onclick="saveTx()">حفظ العملية</button>
+        </div>
+
+        <div class="card">
+          <h2 class="card-title">آخر العمليات</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>التاريخ</th>
+                  <th>الفرع</th>
+                  <th>النوع</th>
+                  <th>العميل / البيان</th>
+                  <th>المبلغ</th>
+                </tr>
+              </thead>
+              <tbody id="txBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section id="tab-custody" class="tab-panel hidden">
+        <div class="card">
+          <h2 class="card-title">صرف عهدة جديدة</h2>
+          <div class="form-grid">
+            <div class="field">
+              <label>الفرع</label>
+              <select id="custBranch"></select>
+            </div>
+            <div class="field">
+              <label>المستلم</label>
+              <input id="custEmp" type="text" placeholder="اسم المخلص أو الموظف" />
+            </div>
+            <div class="field">
+              <label>المبلغ</label>
+              <input id="custAmt" type="number" step="0.01" placeholder="0.00" />
+            </div>
+            <div class="field">
+              <label>ملاحظة</label>
+              <input id="custNote" type="text" placeholder="بيان العهدة" />
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary" onclick="addCustody()">صرف العهدة</button>
+        </div>
+
+        <div class="card">
+          <h2 class="card-title">سجل العهد</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>الفرع</th>
+                  <th>المستلم</th>
+                  <th>المبلغ</th>
+                  <th>الحالة</th>
+                  <th>إجراء</th>
+                </tr>
+              </thead>
+              <tbody id="custBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section id="tab-branches" class="tab-panel hidden">
+        <div class="card">
+          <h2 class="card-title">الفروع والمنافذ الجمركية</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>الرمز</th>
+                  <th>اسم الفرع</th>
+                  <th>المدينة</th>
+                </tr>
+              </thead>
+              <tbody id="branchesBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section id="tab-clients" class="tab-panel hidden">
+        <div class="card">
+          <h2 class="card-title">قائمة العملاء وكشف الحساب السريع</h2>
+          <div class="field">
+            <label>اختر عميلاً لعرض حركاته</label>
+            <select id="stmtClient" onchange="renderStatement()"></select>
+          </div>
+          <div id="stmtBox" style="background:#f8fafc; border:1px solid var(--border); border-radius:10px; padding:10px; margin-bottom:12px;"></div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>اسم العميل</th>
+                  <th>الرصيد</th>
+                </tr>
+              </thead>
+              <tbody id="clientsBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section id="tab-users" class="tab-panel hidden">
+        <div class="card">
+          <h2 class="card-title">حسابات المستخدمين</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>الاسم</th>
+                  <th>اسم المستخدم</th>
+                  <th>الرتبة</th>
+                </tr>
+              </thead>
+              <tbody id="usersBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section id="tab-reports" class="tab-panel hidden">
+        <div class="card">
+          <h2 class="card-title">التقارير والطباعة</h2>
+          <button type="button" class="btn btn-primary" onclick="window.print()">طباعة / حفظ PDF</button>
+          <div id="reportSummary" style="margin-top:12px; font-size:13px;"></div>
+        </div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <button type="button" class="nav-btn active" data-tab="home" onclick="openTab('home')">الرئيسية</button>
+      <button type="button" class="nav-btn" data-tab="custody" onclick="openTab('custody')">العهد</button>
+      <button type="button" class="nav-btn" data-tab="branches" onclick="openTab('branches')">الفروع</button>
+      <button type="button" class="nav-btn" data-tab="clients" onclick="openTab('clients')">العملاء</button>
+      <button type="button" class="nav-btn" data-tab="users" onclick="openTab('users')">الموظفون</button>
+      <button type="button" class="nav-btn" data-tab="reports" onclick="openTab('reports')">التقارير</button>
+    </nav>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script>
+    const KEY = "AHMAD_MAHER_LITE_V1";
+
+    const INITIAL = {
+      branches: [
+        { id: "HQ-SAN", code: "HQ-SAN", name: "الإدارة العامة – شارع الخمسين", city: "صنعاء" },
+        { id: "HOD", code: "HOD", name: "فرع ميناء الحديدة", city: "الحديدة" },
+        { id: "JAD", code: "JAD", name: "فرع مركز الجاد الجمركي", city: "الجاد" },
+        { id: "DHM", code: "DHM", name: "فرع جمرك ذمار", city: "ذمار" },
+        { id: "AFR", code: "AFR", name: "فرع جمرك عفار", city: "عفار" },
+        { id: "RHD", code: "RHD", name: "فرع جمرك الراهدة", city: "الراهدة" },
+        { id: "NHM", code: "NHM", name: "فرع جمرك نهم", city: "نهم" },
+        { id: "SAN", code: "SAN", name: "فرع جمرك صنعاء", city: "صنعاء" }
+      ],
+      users: [
+        { user: "admin", pass: "123", name: "مدير النظام الرئيسي", role: "المدير العام" },
+        { user: "ahmad_maher", pass: "123", name: "أحمد عبدالمجيد محمد ماهر", role: "المدير العام" },
+        { user: "hesham_maher", pass: "123", name: "هشام يحيى عبدالمجيد ماهر", role: "مسؤول العمليات والبيانات" },
+        { user: "waleed_alkahali", pass: "123", name: "وليد عبده طاهر الكهالي", role: "محاسب فرع ذمار" }
+      ],
+      clients: [
+        { id: "c1", name: "مؤسسة الأسعد التجارية", balance: 0 },
+        { id: "c2", name: "مؤسسة جميل حسين للأثاث", balance: 0 },
+        { id: "c3", name: "شركة فتكو الأولى", balance: 0 },
+        { id: "c4", name: "شركة توب فود", balance: 0 },
+        { id: "c5", name: "نور اليمن", balance: 0 }
+      ],
+      txs: [
+        { id: "t1", date: "2026-11-21", branchId: "DHM", type: "RECEIPT", clientId: "c1", amount: 500000, currency: "YER", desc: "دفعة حساب أولية" },
+        { id: "t2", date: "2026-11-21", branchId: "HOD", type: "INCOME", clientId: "c3", amount: 800, currency: "USD", desc: "أتعاب تخليص جمركي" }
+      ],
+      custodies: [
+        { id: "cu1", branchId: "DHM", emp: "وليد عبده طاهر الكهالي", amount: 150000, currency: "YER", note: "عهدة متابعة بيان", status: "مفتوحة" }
+      ]
+    };
+
+    let state = loadData();
+    let activeUser = null;
+
+    function loadData() {
+      try {
+        const raw = localStorage.getItem(KEY);
+        if (raw) return JSON.parse(raw);
+      } catch (e) {}
+      return JSON.parse(JSON.stringify(INITIAL));
+    }
+
+    function saveData() {
+      try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+    }
+
+    function resetDemoData() {
+      state = JSON.parse(JSON.stringify(INITIAL));
+      saveData();
+      renderQuickUsers();
+      toast("تمت إعادة ضبط البيانات");
+    }
+
+    function toast(msg) {
+      const el = document.getElementById("toast");
+      el.textContent = msg;
+      el.classList.remove("hidden");
+      clearTimeout(window._t);
+      window._t = setTimeout(() => el.classList.add("hidden"), 2200);
+    }
+
+    function togglePass() {
+      const inp = document.getElementById("loginPassword");
+      inp.type = inp.type === "password" ? "text" : "password";
+    }
+
+    function renderQuickUsers() {
+      document.getElementById("quickUsersBox").innerHTML = state.users.map(u => `
+        <button type="button" class="quick-btn" onclick="quickSign('${u.user}', '${u.pass}')">
+          <strong>${u.name}</strong>
+          <span>${u.user} / ${u.pass}</span>
+        </button>
+      `).join("");
+    }
+
+    function quickSign(u, p) {
+      document.getElementById("loginUsername").value = u;
+      document.getElementById("loginPassword").value = p;
+      doLogin();
+    }
+
+    function doLogin() {
+      const u = (document.getElementById("loginUsername").value || "").trim();
+      const p = (document.getElementById("loginPassword").value || "").trim();
+      const err = document.getElementById("loginError");
+
+      const found = state.users.find(x => x.user === u && x.pass === p);
+      if (!found) {
+        err.textContent = "بيانات الدخول غير صحيحة (الافتراضي: admin / 123)";
+        err.classList.remove("hidden");
+        return;
+      }
+
+      err.classList.add("hidden");
+      activeUser = found;
+      document.getElementById("loginScreen").classList.add("hidden");
+      document.getElementById("appShell").classList.remove("hidden");
+      document.getElementById("userBanner").textContent = `${found.name} (${found.role})`;
+
+      fillSelects();
+      renderAll();
+      toast("تم تسجيل الدخول بنجاح");
+    }
+
+    function doLogout() {
+      activeUser = null;
+      document.getElementById("appShell").classList.add("hidden");
+      document.getElementById("loginScreen").classList.remove("hidden");
+      renderQuickUsers();
+    }
+
+    function fillSelects() {
+      const bOpts = state.branches.map(b => `<option value="${b.id}">${b.name}</option>`).join("");
+      document.getElementById("branchFilter").innerHTML = `<option value="ALL">كل الفروع (8)</option>` + bOpts;
+      document.getElementById("txBranch").innerHTML = bOpts;
+      document.getElementById("custBranch").innerHTML = bOpts;
+
+      const cOpts = `<option value="">-- بدون عميل --</option>` +
+        state.clients.map(c => `<option value="${c.id}">${c.name}</option>`).join("");
+      document.getElementById("txClient").innerHTML = cOpts;
+      document.getElementById("stmtClient").innerHTML = state.clients.map(c => `<option value="${c.id}">${c.name}</option>`).join("");
+    }
+
+    function openTab(tab) {
+      document.querySelectorAll(".tab-panel").forEach(el => el.classList.add("hidden"));
+      document.getElementById("tab-" + tab).classList.remove("hidden");
+      document.querySelectorAll(".nav-btn").forEach(b => b.classList.toggle("active", b.dataset.tab === tab));
+      if (tab === "clients") renderStatement();
+      if (tab === "reports") renderReport();
+    }
+
+    function num(n) {
+      return Number(n || 0).toLocaleString("en-US", { maximumFractionDigits: 2 });
+    }
+
+    function branchName(id) {
+      const b = state.branches.find(x => x.id === id);
+      return b ? b.name : id;
+    }
+
+    function clientName(id) {
+      const c = state.clients.find(x => x.id === id);
+      return c ? c.name : "-";
+    }
+
+    function getFilteredTxs() {
+      const bf = document.getElementById("branchFilter").value;
+      const cf = document.getElementById("currencyFilter").value;
+      return state.txs.filter(t => (bf === "ALL" || t.branchId === bf) && t.currency === cf);
+    }
+
+    function saveTx() {
+      const branchId = document.getElementById("txBranch").value;
+      const type = document.getElementById("txType").value;
+      const clientId = document.getElementById("txClient").value;
+      const amount = parseFloat(document.getElementById("txAmount").value);
+      const currency = document.getElementById("currencyFilter").value;
+      const desc = document.getElementById("txDesc").value.trim() || "قيد مالي";
+
+      if (!amount || amount <= 0) {
+        toast("أدخل مبلغاً صحيحاً");
+        return;
+      }
+
+      state.txs.push({
+        id: "t_" + Date.now(),
+        date: new Date().toISOString().slice(0, 10),
+        branchId,
+        type,
+        clientId,
+        amount,
+        currency,
+        desc
+      });
+
+      if (clientId) {
+        const cl = state.clients.find(c => c.id === clientId);
+        if (cl) {
+          if (type === "RECEIPT") cl.balance = Number(cl.balance || 0) - amount;
+          if (type === "EXPENSE" || type === "INCOME") cl.balance = Number(cl.balance || 0) + amount;
+        }
+      }
+
+      document.getElementById("txAmount").value = "";
+      document.getElementById("txDesc").value = "";
+      saveData();
+      renderAll();
+      toast("تم حفظ العملية");
+    }
+
+    function addCustody() {
+      const branchId = document.getElementById("custBranch").value;
+      const emp = document.getElementById("custEmp").value.trim() || "موظف";
+      const amount = parseFloat(document.getElementById("custAmt").value);
+      const currency = document.getElementById("currencyFilter").value;
+      const note = document.getElementById("custNote").value.trim() || "عهدة";
+
+      if (!amount || amount <= 0) {
+        toast("أدخل مبلغ العهدة");
+        return;
+      }
+
+      state.custodies.push({
+        id: "cu_" + Date.now(),
+        branchId,
+        emp,
+        amount,
+        currency,
+        note,
+        status: "مفتوحة"
+      });
+
+      document.getElementById("custEmp").value = "";
+      document.getElementById("custAmt").value = "";
+      document.getElementById("custNote").value = "";
+      saveData();
+      renderCustodies();
+      toast("تم صرف العهدة");
+    }
+
+    function settleCust(id) {
+      const c = state.custodies.find(x => x.id === id);
+      if (c) {
+        c.status = "مسوّاة";
+        saveData();
+        renderCustodies();
+        toast("تمت تصفية العهدة");
+      }
+    }
+
+    function renderCustodies() {
+      document.getElementById("custBody").innerHTML = state.custodies.map(c => `
+        <tr>
+          <td>${branchName(c.branchId)}</td>
+          <td>${c.emp}</td>
+          <td>${num(c.amount)} ${c.currency}</td>
+          <td>${c.status}</td>
+          <td>${c.status === "مفتوحة" ? `<button type="button" class="btn btn-success btn-sm" onclick="settleCust('${c.id}')">تصفية</button>` : "✓"}</td>
+        </tr>
+      `).join("");
+    }
+
+    function renderStatement() {
+      const cid = document.getElementById("stmtClient").value;
+      const cf = document.getElementById("currencyFilter").value;
+      const cl = state.clients.find(x => x.id === cid);
+      if (!cl) return;
+
+      const list = state.txs.filter(t => t.clientId === cid && t.currency === cf);
+      const totalIn = list.filter(t => t.type !== "RECEIPT").reduce((s, x) => s + Number(x.amount), 0);
+      const totalPaid = list.filter(t => t.type === "RECEIPT").reduce((s, x) => s + Number(x.amount), 0);
+
+      document.getElementById("stmtBox").innerHTML = `
+        <strong>العميل: ${cl.name}</strong> (${cf})<br/>
+        إجمالي المطالبات/المصاريف: <strong>${num(totalIn)}</strong> | إجمالي المقبوضات: <strong>${num(totalPaid)}</strong> | الصافي: <strong>${num(totalIn - totalPaid)}</strong>
+      `;
+    }
+
+    function renderReport() {
+      const cf = document.getElementById("currencyFilter").value;
+      const list = getFilteredTxs();
+      const inSum = list.filter(t => t.type !== "EXPENSE").reduce((s, x) => s + Number(x.amount), 0);
+      const outSum = list.filter(t => t.type === "EXPENSE").reduce((s, x) => s + Number(x.amount), 0);
+      document.getElementById("reportSummary").innerHTML = `
+        مكتب أحمد ماهر للتخليص والتوكيلات التجارية – صنعاء – شارع الخمسين<br/>
+        العملة: <strong>${cf}</strong> | عدد العمليات: <strong>${list.length}</strong> | الإيرادات/المقبوضات: <strong>${num(inSum)}</strong> | المصروفات: <strong>${num(outSum)}</strong>
+      `;
+    }
+
+    function renderAll() {
+      const cf = document.getElementById("currencyFilter").value;
+      const list = getFilteredTxs();
+      const rec = list.filter(t => t.type !== "EXPENSE").reduce((s, x) => s + Number(x.amount), 0);
+      const exp = list.filter(t => t.type === "EXPENSE").reduce((s, x) => s + Number(x.amount), 0);
+
+      document.getElementById("statsBox").innerHTML = `
+        <div class="stat-card"><div class="stat-label">المقبوضات والإيرادات (${cf})</div><div class="stat-value">${num(rec)}</div></div>
+        <div class="stat-card"><div class="stat-label">المصروفات (${cf})</div><div class="stat-value">${num(exp)}</div></div>
+      `;
+
+      document.getElementById("txBody").innerHTML = list.slice().reverse().map(t => `
+        <tr>
+          <td>${t.date}</td>
+          <td>${branchName(t.branchId)}</td>
+          <td>${t.type}</td>
+          <td>${clientName(t.clientId)} - ${t.desc}</td>
+          <td><strong>${num(t.amount)} ${t.currency}</strong></td>
+        </tr>
+      `).join("") || `<tr><td colspan="5">لا توجد عمليات</td></tr>`;
+
+      renderCustodies();
+
+      document.getElementById("branchesBody").innerHTML = state.branches.map(b => `
+        <tr><td>${b.code}</td><td>${b.name}</td><td>${b.city}</td></tr>
+      `).join("");
+
+      document.getElementById("clientsBody").innerHTML = state.clients.map((c, i) => `
+        <tr><td>${i + 1}</td><td>${c.name}</td><td>${num(c.balance)}</td></tr>
+      `).join("");
+
+      document.getElementById("usersBody").innerHTML = state.users.map(u => `
+        <tr><td>${u.name}</td><td>${u.user}</td><td>${u.role}</td></tr>
+      `).join("");
+
+      renderStatement();
+      renderReport();
+    }
+
+    renderQuickUsers();
+  </script>
+</body>
+</html>
