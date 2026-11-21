@@ -11,6 +11,7 @@
       --surface: #ffffff;
       --navy: #0a1f3a;
       --navy-soft: #15365e;
+      --ship-blue: #16499a;
       --gold: #c8962e;
       --gold-bg: #fdf6e7;
       --ink: #0f1c2e;
@@ -40,26 +41,35 @@
       overflow-x: hidden;
     }
 
+    /* هوية المكتب والشعار الرسمي */
     .brand-lockup {
       display: flex;
       align-items: center;
       gap: 12px;
     }
 
-    .logo-medal {
-      width: 58px;
+    .logo-badge {
+      width: 68px;
       height: 58px;
       flex-shrink: 0;
-      border-radius: 16px;
-      background: linear-gradient(155deg, #08182e, #183e6c);
-      border: 1.5px solid var(--gold);
-      box-shadow: 0 8px 18px rgba(8, 24, 46, 0.25);
+      border-radius: 14px;
+      background: #ffffff;
+      border: 1.5px solid var(--line);
+      box-shadow: 0 6px 16px rgba(10, 31, 58, 0.14);
       display: grid;
       place-items: center;
+      padding: 4px;
+      overflow: hidden;
+    }
+
+    .logo-badge svg {
+      width: 100%;
+      height: 100%;
+      display: block;
     }
 
     .brand-h1 {
-      font-size: 1rem;
+      font-size: 0.98rem;
       font-weight: 900;
       line-height: 1.3;
     }
@@ -423,18 +433,30 @@
 </head>
 <body>
 
+  <!-- قالب الشعار الرسمي لمكتب أحمد ماهر -->
+  <template id="official-logo-tpl">
+    <svg viewBox="0 0 260 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="شعار مكتب أحمد ماهر">
+      <!-- القبة والطبقات البحرية -->
+      <path d="M58 68 C62 45, 82 32, 102 33 C98 44, 88 53, 66 66 Z" fill="#174a9e"/>
+      <path d="M44 79 C58 64, 84 52, 114 47 C106 56, 86 66, 52 78 Z" fill="#174a9e"/>
+      <path d="M32 91 C54 76, 86 63, 124 58 C112 68, 84 79, 40 91 Z" fill="#174a9e"/>
+      <!-- هيكل السفينة والانحناء الخلفي -->
+      <path d="M18 106 C66 84, 136 72, 226 68 L221 76 C144 80, 74 92, 18 106 Z" fill="#174a9e"/>
+      <path d="M214 75 C224 88, 224 106, 210 116 C216 105, 215 90, 207 76 Z" fill="#174a9e"/>
+      <!-- نص Ahmad Maher -->
+      <text x="132" y="106" text-anchor="middle" fill="#174a9e"
+            font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="25" letter-spacing="0.4">
+        Ahmad Maher
+      </text>
+    </svg>
+  </template>
+
   <!-- شاشة الدخول -->
   <section id="login-view">
     <div class="login-card">
       <div class="login-brand">
         <div class="brand-lockup">
-          <div class="logo-medal" aria-hidden="true">
-            <svg width="42" height="42" viewBox="0 0 64 64" fill="none">
-              <path d="M32 5L53 13.5V30.5C53 44.2 44.1 54.6 32 58.5C19.9 54.6 11 44.2 11 30.5V13.5L32 5Z" fill="#0f2b4d" stroke="#e4b54c" stroke-width="2.6"/>
-              <path d="M32 16V43M21 43H43M17 23H47" stroke="#f8d781" stroke-width="2.5" stroke-linecap="round"/>
-              <path d="M17 23L12.5 33H21.5L17 23ZM47 23L42.5 33H51.5L47 23Z" fill="#e4b54c"/>
-            </svg>
-          </div>
+          <div class="logo-badge mount-logo"></div>
           <div>
             <div class="brand-h1">مكتب أحمد ماهر للتخليص والتوكيلات التجارية</div>
             <span class="brand-pill">النظام المحاسبي • صنعاء – شارع الخمسين</span>
@@ -463,13 +485,7 @@
     <header class="app-top">
       <div class="app-top-bar">
         <div class="brand-lockup">
-          <div class="logo-medal" aria-hidden="true">
-            <svg width="42" height="42" viewBox="0 0 64 64" fill="none">
-              <path d="M32 5L53 13.5V30.5C53 44.2 44.1 54.6 32 58.5C19.9 54.6 11 44.2 11 30.5V13.5L32 5Z" fill="#0f2b4d" stroke="#e4b54c" stroke-width="2.6"/>
-              <path d="M32 16V43M21 43H43M17 23H47" stroke="#f8d781" stroke-width="2.5" stroke-linecap="round"/>
-              <path d="M17 23L12.5 33H21.5L17 23ZM47 23L42.5 33H51.5L47 23Z" fill="#e4b54c"/>
-            </svg>
-          </div>
+          <div class="logo-badge mount-logo"></div>
           <div>
             <div class="brand-h1">مكتب أحمد ماهر للتخليص والتوكيلات التجارية</div>
             <div class="app-sub">مدير النظام الرئيسي (المدير العام) • صنعاء – شارع الخمسين</div>
@@ -690,6 +706,11 @@
   </section>
 
   <script>
+    const tpl = document.getElementById("official-logo-tpl");
+    document.querySelectorAll(".mount-logo").forEach(el => {
+      el.appendChild(tpl.content.cloneNode(true));
+    });
+
     const DEFAULT_BRANCHES = [
       "الإدارة العامة – شارع الخمسين",
       "فرع جمرك ذمار",
@@ -709,7 +730,7 @@
       { id: 1, name: "مهندس هشام ماهر", role: "عمليات وتخليص جمركي", branch: "الإدارة العامة – شارع الخمسين", salary: 0 }
     ];
 
-    const STORE_KEY = "ahmad_maher_full_v1";
+    const STORE_KEY = "ahmad_maher_full_v2";
 
     let db = JSON.parse(localStorage.getItem(STORE_KEY) || "null") || {
       branches: DEFAULT_BRANCHES.slice(),
@@ -775,7 +796,6 @@
         </tr>
       `).join("") || `<tr><td colspan="5" style="text-align:center;color:var(--muted);">لا توجد عمليات مسجلة</td></tr>`;
 
-      // الفروع
       document.getElementById("branch-count").textContent = db.branches.length;
       document.getElementById("branch-list").innerHTML = db.branches.map((b, i) => `
         <div class="item-row">
@@ -784,7 +804,6 @@
         </div>
       `).join("");
 
-      // العملاء
       document.getElementById("client-count").textContent = db.clients.length;
       document.getElementById("client-list").innerHTML = db.clients.map((c, i) => `
         <div class="item-row">
@@ -796,7 +815,6 @@
         </div>
       `).join("") || `<p style="color:var(--muted);font-size:0.85rem;">لا يوجد عملاء مضافون بعد.</p>`;
 
-      // الموظفون
       document.getElementById("staff-count").textContent = db.staff.length;
       document.getElementById("staff-list").innerHTML = db.staff.map((s, i) => `
         <div class="item-row">
@@ -808,7 +826,6 @@
         </div>
       `).join("") || `<p style="color:var(--muted);font-size:0.85rem;">لا يوجد موظفون مضافون بعد.</p>`;
 
-      // العهد
       document.getElementById("adv-count").textContent = db.advances.length;
       document.getElementById("adv-list").innerHTML = db.advances.map((a, i) => `
         <div class="item-row">
@@ -820,7 +837,6 @@
         </div>
       `).join("") || `<p style="color:var(--muted);font-size:0.85rem;">لا توجد عهد مسجلة بعد.</p>`;
 
-      // التقرير
       document.getElementById("report-summary").textContent =
         `الفرع: ${br === "ALL" ? "كل الفروع" : br} | العملة: ${cur} | المقبوضات: ${inc.toLocaleString("en-US")} | المصروفات: ${exp.toLocaleString("en-US")} | الصافي: ${(inc - exp).toLocaleString("en-US")}`;
     }
