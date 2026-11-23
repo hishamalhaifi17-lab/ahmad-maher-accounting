@@ -443,7 +443,7 @@
         <span class="pill">مسؤول النظام — مسؤول النظام</span>
         <span class="pill">Supabase</span>
         <button type="button" class="btn btn-secondary" onclick="toggleSupabaseSettings()">إعدادات Supabase</button>
-        <button type="button" class="btn btn-danger" onclick="alert('تم تسجيل الخروج من الجلسة الحالية.')">خروج</button>
+        <button type="button" id="logoutBtn" class="btn btn-danger" onclick="handleLogout()">تسجيل الخروج</button>
       </div>
     </section>
 
@@ -501,7 +501,6 @@
 
     <!-- تبويب 1: العهد وتصفيتها -->
     <div id="panelCustody" class="tab-panel active">
-      <!-- ترويسة مخصصة لطباعة تقرير التصفية فقط -->
       <div id="settlementPrintHeader" class="print-only-header">
         <p class="print-office-name">مكتب أحمد ماهر للتخليص الجمركي والتوكيلات التجارية</p>
         <p class="print-doc-title">كشف تصفية العهد والمبالغ المتبقية</p>
@@ -511,7 +510,6 @@
         </div>
       </div>
 
-      <!-- العهد المعلقة (تُخفى من طباعة التصفية ولا يظهر إجماليها في تقرير التصفية) -->
       <section class="card" id="pendingCustodySection">
         <div class="section-top">
           <h2 class="section-title">العهد المحولة إليك والمعلقة للتصفية</h2>
@@ -540,7 +538,6 @@
         </div>
       </section>
 
-      <!-- العهد التي تم تصفيتها + طباعة PDF للتصفية وإجمالي المبلغ المتبقي عليها -->
       <section class="card" id="settledCustodySection">
         <div class="section-top">
           <h2 class="section-title">العهد التي تم تصفيتها</h2>
@@ -576,7 +573,6 @@
         </div>
       </section>
 
-      <!-- صرف عهدة جديدة لموظف -->
       <section class="card no-print">
         <h2 class="section-title">صرف عهدة لموظف</h2>
         <div class="form-grid" style="margin-top: 12px;">
@@ -671,7 +667,7 @@
       </section>
     </div>
 
-    <!-- تبويب 3: المعلومية (إضافة معلومية جديدة + قائمة العملاء المضافين) -->
+    <!-- تبويب 3: المعلومية -->
     <div id="panelInfo" class="tab-panel">
       <section class="card">
         <h2 class="section-title">إضافة معلومية جديدة وإدارة العملاء</h2>
@@ -733,10 +729,10 @@
       url: 'ahmad_maher_sb_url',
       anonKey: 'ahmad_maher_sb_anon_key',
       syncedAt: 'ahmad_maher_sb_last_sync',
-      custody: 'ahmad_maher_custody_items_v2',
-      preliminary: 'ahmad_maher_prelim_items_v2',
-      clients: 'ahmad_maher_clients_list_v2',
-      mainInfo: 'ahmad_maher_main_info_v2'
+      custody: 'ahmad_maher_custody_items_v4',
+      preliminary: 'ahmad_maher_prelim_items_v4',
+      clients: 'ahmad_maher_clients_list_v4',
+      mainInfo: 'ahmad_maher_main_info_v4'
     };
 
     const DEFAULT_CLIENTS = [
@@ -798,6 +794,10 @@
         .trim()
         .replace(/\/rest\/v1\/?$/i, '')
         .replace(/\/+$/, '');
+    }
+
+    function handleLogout() {
+      alert('تم تسجيل الخروج من الجلسة الحالية.');
     }
 
     function setSyncStatus(message, type) {
@@ -925,7 +925,7 @@
         if (pendingItems.length === 0) {
           pendingBody.innerHTML = '<tr><td colspan="8" style="text-align:center;color:#64748b;">لا توجد عهد معلقة حالياً</td></tr>';
         } else {
-          pendingBody.innerHTML = pendingItems.map((item, idx) => {
+          pendingBody.innerHTML = pendingItems.map((item) => {
             const remaining = Math.max(0, (Number(item.amount) || 0) - (Number(item.settledAmount) || 0));
             return `
               <tr>
@@ -946,7 +946,6 @@
       }
 
       let totalSettledBase = 0;
-      let totalSettledPaid = 0;
       let totalSettledRemaining = 0;
 
       if (settledBody) {
@@ -958,7 +957,6 @@
             const settledAmt = Number(item.settledAmount) || 0;
             const remaining = Math.max(0, amount - settledAmt);
             totalSettledBase += amount;
-            totalSettledPaid += settledAmt;
             totalSettledRemaining += remaining;
 
             return `
@@ -1037,7 +1035,6 @@
       renderCustodyTables();
     }
 
-    // طباعة PDF للتصفية: يعرض العهد التي تم تصفيتها فقط وإجمالي المبلغ المتبقي عليها دون إجمالي العهد المعلقة
     function printSettledCustodyPdf() {
       selectTab('custody');
       const pendingSec = document.getElementById('pendingCustodySection');
